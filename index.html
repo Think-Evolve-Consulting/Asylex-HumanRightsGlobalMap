@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="//unpkg.com/d3"></script>
+    <script src="//unpkg.com/globe.gl"></script>
+    <script
+      src="https://kit.fontawesome.com/1e939a20d7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <title>Human Right Mechanism</title>
+  </head>
+  <body>
+    <div id="globeViz"></div>
+
+    <div id="popup-container"></div>
+
+    <div id="table">
+      <div class="top-part">
+        <h5 style="color: azure">HR Mechanisms Applicable in All States</h5>
+        <button onclick="hideTable()" style="color: azure" class="closeBtn">
+          <i class="fa-sharp fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <table id="customers">
+        <tr>
+          <th>Institution</th>
+          <th>Mechanism</th>
+          <th></th>
+          <th>Name and Link Complaint Procedure</th>
+        </tr>
+
+        <tr>
+          <td>Human Rights Council</td>
+          <td>
+            <p>Special Procedures</p>
+            <p>HRC Complaint Procedure</p>
+          </td>
+
+          <td>
+            <p>Working Groups</p>
+            <p>Special Rapporteurs</p>
+          </td>
+
+          <td>
+            <p>
+              Working Group on Arbitrary Detention (WGAD) >
+              <a
+                target="_blank"
+                href="https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
+                >Link</a
+              >
+            </p>
+
+            <p>
+              Working Group on Enforced or Involuntary Disappearances (WGEID) >
+              <a
+                target="_blank"
+                href="https://www.ohchr.org/en/special-procedures/wg-disappearances/reporting-disappearance-working-group"
+                >Link</a
+              >
+            </p>
+            <p>
+              Submission to Special Procedures >
+              <a target="_blank" href="https://spsubmission.ohchr.org/">Link</a>
+            </p>
+            <p>
+              Submitting information to Special Rapporteur >
+              <a
+                target="_blank"
+                href="https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM"
+                >Link</a
+              >
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td>ECOSOC</td>
+          <td>Commission on the Status of Women</td>
+          <td></td>
+          <td style="text-align: center">
+            <a
+              target="_blank"
+              href="https://www.unwomen.org/en/csw/communications-procedure"
+              >Link</a
+            >
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="tableBtn">
+      <button onclick="showTable()" style="color: azure" class="closeBtn">
+        <i class="fa-solid fa-table-list"></i>
+      </button>
+    </div>
+
+    <div id="title">
+      <h1>Human Right Mechanism</h1>
+    </div>
+
+    <div id="footer">
+      <p>
+        Created by
+        <a href="https://www.thinkevolveconsulting.com"
+          >Think Evolve Consultancy LLP</a
+        >
+      </p>
+    </div>
+
+    <script>
+      window.jsPDF = window.jspdf.jsPDF;
+      function downloadPdf() {
+        const { jsPDF } = window.jspdf;
+        let ele = document.querySelector("#popup-container");
+
+        var doc = new jsPDF();
+        doc.html(ele, {
+          callback: function (doc) {
+            // Save the PDF
+            doc.save("sample-document.pdf");
+          },
+          margin: [10, 10, 10, 10],
+          autoPaging: "text",
+          x: 0,
+          y: 0,
+          width: 200, //target width in the PDF document
+          windowWidth: 800, //window width in CSS pixels
+        });
+      }
+    </script>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/globe.js"></script>
+  </body>
+</html>
