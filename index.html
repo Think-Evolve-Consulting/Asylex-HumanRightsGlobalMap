@@ -146,12 +146,20 @@
       function downloadPdf() {
         const { jsPDF } = window.jspdf;
         let ele = document.querySelector("#popup-container");
+        let table = document.querySelector("#table");
+
 
         var doc = new jsPDF();
         doc.html(ele, {
           callback: function (doc) {
+            doc.html(table, {
+            callback: function () {
+              // Save the PDF document
+              doc.save("sample-document.pdf");
+            }
+          })
             // Save the PDF
-            doc.save("sample-document.pdf");
+            
           },
           margin: [10, 10, 10, 10],
           autoPaging: "text",
@@ -160,6 +168,8 @@
           width: 200, //target width in the PDF document
           windowWidth: 800, //window width in CSS pixels
         });
+
+
       }
     </script>
 
