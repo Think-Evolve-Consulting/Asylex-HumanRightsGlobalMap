@@ -1,6 +1,7 @@
 const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
-const getVal = (feat) => feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedAdminCountryData4.json")
+const getVal = (feat) =>
+  feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
+fetch("../data/finalUpdatedAdminCountryData5.json")
   .then((res) => res.json())
   .then((countries) => {
     const maxVal = Math.max(...countries.features.map(getVal));
@@ -10,16 +11,17 @@ fetch("../data/finalUpdatedAdminCountryData4.json")
       .backgroundImageUrl("//unpkg.com/three-globe/example/img/night-sky.png")
       .lineHoverPrecision(0)
       .labelText(countries?.properties?.BRK_NAME)
-      .polygonsData(countries.features.filter((d) => d.properties.ISO_A2 !== "AQ"))
+      .polygonsData(
+        countries.features.filter((d) => d.properties.ISO_A2 !== "AQ")
+      )
       .polygonAltitude(0.06)
       .polygonCapColor((feat) => feat?.properties?.color) // polygon color coming from color property
       .polygonSideColor(() => "rgba(0, 100, 0, 0.15)") // ground color
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
-        
-       
+        console.log(d);
 
-        if (d.UNTreatyBody === undefined) {        
+        if (d.UNTreatyBody === undefined) {
           showPopup(`
                   <div class="top-part content">
                     <h2 style="margin: 0;">${d.BRK_NAME}</h2>
@@ -31,20 +33,35 @@ fetch("../data/finalUpdatedAdminCountryData4.json")
         }
         fetch("../data/UNTrendyBodyAndRegionalOnes.json")
           .then((res) => res.json())
-          .then((committeesDetails) => {            
+          .then((committeesDetails) => {
             let committees = d?.UNTreatyBody;
             let institutions = d?.regionalHumanRightsMechanism;
-            let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (item) {
-              return committees.indexOf(item?.committee) !== -1;
+            let relevantReservations = d?.releventReservations;
+
+            let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(
+              function (item) {
+                return committees.indexOf(item?.committee) !== -1;
+              }
+            );
+
+            const relevantReservation = Object.keys(d?.releventReservations);
+
+            //  Including reservations into the UNTreatyBodyData
+            UNTreatyBodyData.map((data) => {
+              if (data.committee.includes(relevantReservation)) {
+                data.reservation = d?.releventReservations[data.committee];
+              }
             });
 
-            let regionalHumanRightsMechanismData = committeesDetails?.regionalOnes?.filter(function (item) {
-              return institutions.indexOf(item?.institution) !== -1;
-            });
+            let regionalHumanRightsMechanismData =
+              committeesDetails?.regionalOnes?.filter(function (item) {
+                return institutions.indexOf(item?.institution) !== -1;
+              });
 
-            // console.log({institutions})
-
-            const reservation = d?.reservations === undefined ? '':`<strong>Attention:</strong> When preparing a submission, <strong>${d.BRK_NAME}</strong> has made a reservation on article(s) <b>${d?.reservations}</b> to the Convention of this Committee`
+            const reservation =
+              d?.reservations === undefined
+                ? ""
+                : `<strong>Attention:</strong> When preparing a submission, <strong>${d.BRK_NAME}</strong> has made a reservation on article(s) <b>${d?.reservations}</b> to the Convention of this Committee`;
 
             let UNTreatyBody = [
               `<div>
@@ -53,12 +70,21 @@ fetch("../data/finalUpdatedAdminCountryData4.json")
                     return `
                       <div>
                         <li><p>${un?.abbreviations}</p></li>
-                        <p><a target="_blank" href=${un?.individualComplaintLink}>Individual Complaint</a></p>
-                        <p><a target="_blank" href=${un?.enquiry}>Inquiry</a></p>                        
+                        <p><a target="_blank" href=${
+                          un?.individualComplaintLink
+                        }>Individual Complaint</a></p>
+                        <p><a target="_blank" href=${
+                          un?.enquiry
+                        }>Inquiry</a></p>
+
+                        ${
+                          un?.reservation
+                            ? `<p><strong>Reservation:</strong> ${un?.reservation}</p>`
+                            : ""
+                        }
+                        
                       </div>`;
                   }).join(" ")}
-
-                  ${reservation}
               </div>`,
             ];
             let RegionalHuman = [
@@ -71,7 +97,9 @@ fetch("../data/finalUpdatedAdminCountryData4.json")
 
             showPopup(`
                   <div class="top-part">
-                    <h2 style="margin: 0;">${d.BRK_NAME} <button  onclick="downloadPdf()" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
+                    <h2 style="margin: 0;">${
+                      d.BRK_NAME
+                    } <button  onclick="downloadPdf()" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
                     <button  onclick="hidePopup()" class="closeBtn"><i class="fa-sharp fa-solid fa-xmark"></i></button>
                   </div>
                   ${
@@ -79,7 +107,12 @@ fetch("../data/finalUpdatedAdminCountryData4.json")
                       ? `<h4>UN Treaty Body:</h4><p> In <strong>${d.BRK_NAME}</strong>, no relevant international human rights complaint mechanisms are available for (rejected) asylum seekers. If you still wish to take initiative in the context, please assess the further possibilities applicable to all countries listed below. </p>`
                       : UNTreatyBody
                   }                  
-                  ${d?.regionalHumanRightsMechanism[0]?.length === 0 || !d?.regionalHumanRightsMechanism ? `<h4>Regional Human Rights Mechanism:</h4><p>In <strong>${d.BRK_NAME}</strong>, no Regional Human Rights Mechanism are available for (rejected) asylum seekers.</p>` : RegionalHuman}
+                  ${
+                    d?.regionalHumanRightsMechanism[0]?.length === 0 ||
+                    !d?.regionalHumanRightsMechanism
+                      ? `<h4>Regional Human Rights Mechanism:</h4><p>In <strong>${d.BRK_NAME}</strong>, no Regional Human Rights Mechanism are available for (rejected) asylum seekers.</p>`
+                      : RegionalHuman
+                  }
                 </div>`);
           });
       })
