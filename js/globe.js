@@ -4,6 +4,7 @@ const getVal = (feat) =>
 fetch("../data/finalUpdatedAdminCountryData5.json")
   .then((res) => res.json())
   .then((countries) => {
+    // console.log(countries)
     const maxVal = Math.max(...countries.features.map(getVal));
     colorScale.domain([0, maxVal]);
     const world = Globe()
