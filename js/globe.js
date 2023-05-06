@@ -1,7 +1,7 @@
 const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
 const getVal = (feat) =>
   feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedAdminCountryData5.json")
+fetch("../data/finalUpdatedGeoJSON.json")
   .then((res) => res.json())
   .then((countries) => {
     // console.log(countries)
@@ -20,8 +20,6 @@ fetch("../data/finalUpdatedAdminCountryData5.json")
       .polygonSideColor(() => "rgba(0, 100, 0, 0.15)") // ground color
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
-        console.log(d);
-
         if (d.UNTreatyBody === undefined) {
           showPopup(`
                   <div class="top-part content">
@@ -46,6 +44,7 @@ fetch("../data/finalUpdatedAdminCountryData5.json")
             );
 
             const relevantReservation = Object.keys(d?.releventReservations);
+            // const relevantReservationValue = Object.values(d?.releventReservations);
 
             //  Including reservations into the UNTreatyBodyData
             UNTreatyBodyData.map((data) => {
@@ -77,13 +76,11 @@ fetch("../data/finalUpdatedAdminCountryData5.json")
                         <p><a target="_blank" href=${
                           un?.enquiry
                         }>Inquiry</a></p>
-
                         ${
                           un?.reservation
                             ? `<p><strong>Reservation:</strong> ${un?.reservation}</p>`
                             : ""
                         }
-                        
                       </div>`;
                   }).join(" ")}
               </div>`,
@@ -96,11 +93,13 @@ fetch("../data/finalUpdatedAdminCountryData5.json")
                 .join(" ")}</div>`,
             ];
 
+            const string = `${d.BRK_NAME}_${committees}_${institutions}`;
+
             showPopup(`
                   <div class="top-part">
                     <h2 style="margin: 0;">${
                       d.BRK_NAME
-                    } <button  onclick="downloadPdf()" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
+                    } <button id="downloadPdf" onclick="downloadPdf(this, '${string}')" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
                     <button  onclick="hidePopup()" class="closeBtn"><i class="fa-sharp fa-solid fa-xmark"></i></button>
                   </div>
                   ${
@@ -127,3 +126,153 @@ fetch("../data/finalUpdatedAdminCountryData5.json")
       )
       .polygonsTransitionDuration(300)(document.getElementById("globeViz"));
   });
+
+// pdf download function
+
+const downLoadPdf = document.getElementById("downloadPdf");
+window.jsPDF = window.jspdf.jsPDF;
+
+function downloadPdf(button, dynamicValue) {
+  const { jsPDF } = window.jspdf;
+  var doc = new jsPDF();  
+  const country = dynamicValue.split("_")[0];
+  let committees = dynamicValue.split("_")[1];
+  let institutions = dynamicValue.split("_")[2];
+
+  fetch("../data/UNTrendyBodyAndRegionalOnes.json")
+    .then((res) => res.json())
+    .then((committeesDetails) => {
+      let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (
+        item
+      ) {
+        return committees.indexOf(item?.committee) !== -1;
+      });
+      let regionalHumanRightsMechanismData =
+        committeesDetails?.regionalOnes?.filter(function (item) {
+          return institutions.indexOf(item?.institution) !== -1;
+        });
+
+      // add text to the PDF document
+      doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
+      doc.text(`For`, 105, 18, null, null, "center");
+
+      // Country Name
+      doc.setTextColor("#3083ff");
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(18);
+      doc.text(`${country}`, 105, 26, null, null, "center");
+
+      // UN Treaty Body title
+      doc.setFontSize(16);
+      doc.setTextColor("#000000");
+      doc.setFont("helvetica", "bold");
+      doc.text("UN Treaty Body: ", 10, 40);      
+
+      if (UNTreatyBodyData?.length === 0) {
+        // doc.setFontSize(12);
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor("#000000");
+
+        // set the font size and line height
+        var fontSize = 12;
+        var lineHeight = .5;
+
+        // set the description text
+        var descriptionText =
+        `In ${country}, no relevant international human rights complaint mechanisms are available for (rejected) asylum seekers. If you still wish to take initiative in the context, please assess the further possibilities applicable to all countries listed below.`;
+
+        // split the description text into an array of strings that fit within the width of the document
+        var splitText = doc.splitTextToSize(descriptionText, 250);
+
+        // add the split text to the PDF document
+        doc.setFontSize(fontSize);
+        for (var i = 0; i < splitText.length; i++) {
+          doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
+        }
+
+      } else {
+        UNTreatyBodyData.map((un, i) => {
+          // UN Treaty Body commits Names
+          doc.setFontSize(16);
+          doc.setFont("times", "normal");
+          doc.setTextColor("#000000");
+          doc.text(`> ${un?.abbreviations}`, 10, 50 + i * 30);
+
+          // UN Treaty Body commits Links
+          doc.setFontSize(12);
+          doc.setFont("times", "normal");
+          doc.setTextColor("#3083ff");
+          doc.textWithLink("Individual Complaint", 20, 60 + i * 30, {
+            url: un?.individualComplaintLink,
+          });
+          doc.textWithLink("Inquiry", 20, 70 + i * 30, { url: un?.enquiry });
+        });
+      }
+
+      if(UNTreatyBodyData?.length === 0){
+        doc.setFontSize(16);
+        doc.setTextColor("#000000");
+        doc.setFont("helvetica", "bold");
+        doc.text("Regional Human Rights Mechanism: ",10, 80);
+
+      } else {
+        doc.setFontSize(16);
+        doc.setTextColor("#000000");
+        doc.setFont("helvetica", "bold");
+        doc.text(
+        "Regional Human Rights Mechanism: ",
+        10,
+        80 + (UNTreatyBodyData.length - 1) * 30
+      );
+    }
+
+
+    if(regionalHumanRightsMechanismData.length === 0 || !regionalHumanRightsMechanismData){
+
+      // doc.setFontSize(12);
+      //doc.setFont("helvetica", "light");
+      doc.setTextColor("#000000");
+      // set the font size and line height
+      var fontSize = 12;
+      var lineHeight = .5;
+      // set the description text
+      let descriptionTextRHRM =
+      `In ${country}, no Regional Human Rights Mechanism are available for (rejected) asylum seekers.`;
+      // split the description text into an array of strings that fit within the width of the document
+      var splitTextRHRM = doc.splitTextToSize(descriptionTextRHRM, 250);
+
+      // add the split text to the PDF document      
+
+      if(UNTreatyBodyData?.length === 0){
+        doc.setFontSize(fontSize);
+        for (var i = 0; i < splitTextRHRM.length; i++) {
+          doc.text(splitTextRHRM[i], 10, 90 + i * fontSize * lineHeight);
+        }
+      } else {
+
+        doc.setFontSize(fontSize);
+        for (var i = 0; i < splitTextRHRM.length; i++) {
+          doc.text(splitTextRHRM[i], 10, (90 + (UNTreatyBodyData.length - 1)* 30) + i * fontSize * lineHeight);
+        }
+
+      }
+
+    } else {
+
+      regionalHumanRightsMechanismData.map((un, i) => {
+        // Links
+        doc.setFontSize(12);
+        doc.setFont("times", "normal");
+        doc.setTextColor("#3083ff");
+        doc.textWithLink(un?.abbreviations,20, 90 + (UNTreatyBodyData.length - 1) * 30 + i * 10,
+          { url: un?.IndividualComplaint }
+        );
+      });
+
+    }   
+
+      
+
+      doc.save(`Human Rights Mechanisms_${country}.pdf`);
+    });
+}

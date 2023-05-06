@@ -47,14 +47,22 @@
     <div id="popup-container"></div>
 
     <div id="table">
-      <div class="top-part">
+      <!-- <div class="top-part">
         <h5 style="color: azure">HR Mechanisms Applicable in All States</h5>
         <button onclick="hideTable()" style="color: azure" class="closeBtn">
           <i class="fa-sharp fa-solid fa-xmark"></i>
         </button>
-      </div>
+      </div> -->
 
       <table id="customers">
+        <tr>
+          <th colspan="3" style="font-size: 0.9rem; border-right: none;">HR Mechanisms in All States</th>
+          <th style="border-left: none;">
+            <button onclick="hideTable()" style="color: azure; margin: 0px 0px 0 70%;" class="closeBtn">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+            </button>
+          </th>
+        </tr>
         <tr>
           <th>Institution</th>
           <th>Mechanism</th>
@@ -141,25 +149,23 @@
       </p>
     </div>
 
-    <script>
+    <!-- <script>
       window.jsPDF = window.jspdf.jsPDF;
       function downloadPdf() {
         const { jsPDF } = window.jspdf;
         let ele = document.querySelector("#popup-container");
         let table = document.querySelector("#table");
 
-
         var doc = new jsPDF();
         doc.html(ele, {
           callback: function (doc) {
             doc.html(table, {
-            callback: function () {
-              // Save the PDF document
-              doc.save("HHuman Rights Mechanisms_[Name of Country].pdf");
-            }
-          })
+              callback: function () {
+                // Save the PDF document
+                doc.save("HHuman Rights Mechanisms_[Name of Country].pdf");
+              },
+            });
             // Save the PDF
-            
           },
           margin: [10, 10, 10, 10],
           autoPaging: "text",
@@ -168,9 +174,15 @@
           width: 200, //target width in the PDF document
           windowWidth: 800, //window width in CSS pixels
         });
-
-
       }
+    </script> -->
+
+    <script>
+
+      function hello (h){
+        console.log(h)
+      }
+
     </script>
 
     <script src="./js/index.js"></script>

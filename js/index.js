@@ -15,7 +15,7 @@ function hidePopup() {
 
 function hideTable() {
   table.style.display = "none";
-  tableBtn.style.display = "block";
+  // tableBtn.style.display = "block";
 }
 
 function showTable() {
@@ -35,9 +35,7 @@ function fetchData () {
   fetch("../data/NotmatchedCountries.json")
           .then((res) => res.json())
           .then((committeesDetails) => {
-
             console.log(committeesDetails?.length)
-
           })
   
   fetch("../data/AsyLex_Global_Counturies.json")
@@ -48,9 +46,6 @@ function fetchData () {
             committeesDetails.map(country => {
               allCountry.push(country.Country)
             })
-
-
-
 
             fetch("../data/finalUpdatedAdminCountryData5.json")
           .then((res) => res.json())
@@ -78,20 +73,7 @@ function fetchData () {
           console.log({notMatched})
 
           })
-
-
-
-
-
-
-          })
-
-          
-
-          
-
-
-
+        })
       }
 
-      fetchData()
+      // fetchData()

@@ -35,7 +35,7 @@ body {
     text-align: center;
   }
   .closeBtn i {
-    font-size: 40px;
+    font-size: 18px;
     cursor: pointer;
   }
   .closeBtn i:hover {
@@ -56,6 +56,7 @@ body {
     padding: 1%;       
     width: 20%;
     display: none;
+    max-height: 50%;
   }
   
   #tableBtn {
