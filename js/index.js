@@ -15,7 +15,7 @@ function hidePopup() {
 
 function hideTable() {
   table.style.display = "none";
-  // tableBtn.style.display = "block";
+  tableBtn.style.display = "block";
 }
 
 function showTable() {

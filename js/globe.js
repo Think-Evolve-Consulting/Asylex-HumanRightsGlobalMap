@@ -230,7 +230,7 @@ function downloadPdf(button, dynamicValue) {
     if(regionalHumanRightsMechanismData.length === 0 || !regionalHumanRightsMechanismData){
 
       // doc.setFontSize(12);
-      //doc.setFont("helvetica", "light");
+      doc.setFont("helvetica", "normal");
       doc.setTextColor("#000000");
       // set the font size and line height
       var fontSize = 12;
