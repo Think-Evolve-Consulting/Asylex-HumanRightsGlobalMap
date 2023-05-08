@@ -1,7 +1,7 @@
 const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
 const getVal = (feat) =>
   feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedGeoJSON.json")
+fetch("../data/finalUpdatedGeoJSON_1.json")
   .then((res) => res.json())
   .then((countries) => {
     // console.log(countries)
