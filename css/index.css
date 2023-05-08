@@ -41,6 +41,18 @@ body {
   .closeBtn i:hover {
     color: red;
   }
+
+  .tableBtn {
+    border: none;
+    background: transparent;
+    display: block;
+    text-align: center;
+  }
+
+  .tableBtn i {
+    font-size: 1.9rem;
+    cursor: pointer;
+  }
   
   .top-part {
     display: flex;
