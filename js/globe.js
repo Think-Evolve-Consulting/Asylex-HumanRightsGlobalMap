@@ -1,7 +1,7 @@
 const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
 const getVal = (feat) =>
   feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedGeoJSON_1.json")
+fetch("../data/finalUpdatedAdminCountryData6.json")
   .then((res) => res.json())
   .then((countries) => {
     // console.log(countries)
@@ -156,6 +156,10 @@ function downloadPdf(button, dynamicValue) {
       doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
       doc.text(`For`, 105, 18, null, null, "center");
 
+      const imageURL = "../data/AsyLexGlobalLogo.jpg";
+
+      doc.addImage(imageURL, "PNG", 165, 5, 40, 40);
+
       // Country Name
       doc.setTextColor("#3083ff");
       doc.setFont("helvetica", "bold");
@@ -278,11 +282,10 @@ function downloadPdf(button, dynamicValue) {
       // add some content to the second page
       doc.setFontSize(18);
       doc.setFont("helvetica", "bold");
-      doc.setTextColor("#000000");   
+      doc.setTextColor("#000000");
       doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");
 
-
-      // Heading
+      /* // Heading
       doc.setFontSize(16);
       doc.setFont("helvetica", "normal");
       doc.text("Institution", 10, 30);
@@ -291,12 +294,11 @@ function downloadPdf(button, dynamicValue) {
       // Next line
       doc.text("Name and Link Complaint Procedure", 60, 80);
 
-
       // Text link style
       doc.setFontSize(12);
       doc.setFont("times", "normal");
       doc.setTextColor("#3083ff");
-      
+
       // Institution
       doc.text("Human Rights Council", 10, 40);
       doc.text("ECOSOC", 10, 50);
@@ -310,17 +312,111 @@ function downloadPdf(button, dynamicValue) {
       doc.text("Working Groups", 140, 40);
       doc.text("Special Rapporteurs", 140, 50);
 
-      // Name and Link Complaint Procedure      
-      doc.textWithLink("Working Group on Arbitrary Detention (WGAD)", 10, 90 , { url: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals" })
+      // Name and Link Complaint Procedure
+      doc.textWithLink("Working Group on Arbitrary Detention (WGAD)", 10, 90, {
+        url: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
+      });
 
-      doc.textWithLink("Working Group on Enforced or Involuntary Disappearances (WGEID)", 10, 100 , { url: "https://www.ohchr.org/en/special-procedures/wg-disappearances/reporting-disappearance-working-group" })
+      doc.textWithLink(
+        "Working Group on Enforced or Involuntary Disappearances (WGEID)",
+        10,
+        100,
+        {
+          url: "https://www.ohchr.org/en/special-procedures/wg-disappearances/reporting-disappearance-working-group",
+        }
+      );
 
-      doc.textWithLink("Submission to Special Procedures", 10, 110 , { url: "https://spsubmission.ohchr.org" })
+      doc.textWithLink("Submission to Special Procedures", 10, 110, {
+        url: "https://spsubmission.ohchr.org",
+      });
 
-      doc.textWithLink("Submitting information to Special Rapporteur", 10, 120 , { url: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM" })
+      doc.textWithLink(
+        "Submitting information to Special Rapporteur",
+        10,
+        120,
+        {
+          url: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM",
+        }
+      );
+
+      doc.textWithLink("Link", 10, 130, {
+        url: "https://www.unwomen.org/en/csw/communications-procedure",
+      }); */
       
-      doc.textWithLink("Link", 10, 130, { url: "https://www.unwomen.org/en/csw/communications-procedure" })
+      // define the table data
+      const data = [
+        ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
+        ["Human Rights Council", "", "Working Groups", "Working Group on Arbitrary Detention (WGAD)"],
+        ["", "", "Special Rapporteurs", "Working Group on Enforced or Involuntary Disappearances (WGEID)"],
+        ["", "Special Procedures", "", "Working Group on Enforced or Involuntary Disappearances (WGEID)"],
+        ["", "", "", "Submission to Special Procedures"],
+        ["", "HRC Complaint Procedure", "", "Submitting information to Special Rapporteur > Link"],
+        ["ECOSOC", "Commission on the Status of Women", "", "Link", ""],       
+      ];
+
+      // define the table options
+      const options = {
+        startY: 20,
+      };
+
+      // create the table
+      doc.autoTable({
+        head: [data[0]],
+        body: data.slice(1),
+        didDrawCell: function (data) {
+          // draw a border around the cell
+          doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
+        },
+        ...options,
+      });    
+
 
       doc.save(`Human Rights Mechanisms_${country}.pdf`);
     });
+}
+
+// Search function
+
+const globeContainer = document.getElementById("globeViz");
+const searchForm = document.getElementById("search-form");
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+
+function countrySearch() {
+  const globeLayer = new deck.GlobeLayer({
+    id: "globe",
+    // Set your globe options here
+    // ...
+    // Load your GeoJSON data as a GeoJsonLayer
+    layers: [
+      new deck.GeoJsonLayer({
+        id: "countries",
+        data: "path/to/your/countries.geojson",
+        // Set your layer options here
+        // ...
+      }),
+    ],
+  });
+  const deckgl = new deck.DeckGL({
+    container: globeContainer,
+    layers: [globeLayer],
+  });
+
+  searchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    console.log(event.target.value);
+
+    const userInput = searchInput.value;
+
+    globeLayer.setProps({
+      layers: [
+        new deck.GeoJsonLayer({
+          id: "countries",
+          data: "../data/finalUpdatedGeoJSON_1.json",
+          filter: ["match", ["get", "name"], [userInput], true, false],
+        }),
+      ],
+    });
+  });
 }

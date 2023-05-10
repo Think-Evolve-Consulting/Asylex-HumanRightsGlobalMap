@@ -34,10 +34,16 @@
       rel="stylesheet"
     />
 
+    <!-- deckgl -->
+    <script src="https://unpkg.com/@deck.gl/core/dist.min.js"></script>
+    <script src="https://unpkg.com/@deck.gl/layers/dist.min.js"></script>
+
     <!-- pdf -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+
 
     <title>Human Rights Mechanisms</title>
   </head>
@@ -138,6 +144,15 @@
 
     <div id="title">
       <h1>Human Rights Mechanisms</h1>
+
+
+      <div id="search-form">
+        <input type="text" id="search-input" placeholder="Search for a country" />
+        <button type="submit" onclick="countrySearch()" id="search-button">Search</button>
+      </div>
+
+
+
     </div>
 
     <div id="footer">

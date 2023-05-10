@@ -199,3 +199,31 @@ body {
     }
   
    }
+
+
+   /* search bar design */
+
+   #search-form {
+    position: absolute;
+    top: 80px;
+    left: 2px;
+    display: flex;
+    align-items: center;
+  }
+  #search-input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  #search-button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3083ff;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
