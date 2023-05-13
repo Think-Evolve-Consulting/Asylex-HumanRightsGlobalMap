@@ -53,13 +53,6 @@
     <div id="popup-container"></div>
 
     <div id="table">
-      <!-- <div class="top-part">
-        <h5 style="color: azure">HR Mechanisms Applicable in All States</h5>
-        <button onclick="hideTable()" style="color: azure" class="closeBtn">
-          <i class="fa-sharp fa-solid fa-xmark"></i>
-        </button>
-      </div> -->
-
       <table id="customers">
         <tr>
           <th colspan="3" style="font-size: 0.9rem; border-right: none;">HR Mechanisms in All States</th>
@@ -145,11 +138,18 @@
     <div id="title">
       <h1>Human Rights Mechanisms</h1>
 
+      <!-- <div id="search-form">
+        <input type="text" id="search-input" placeholder="Search for a country" />       
+        <button type="submit" onclick="searchCountry()" id="search-button">Search</button>            
+      </div> -->
 
-      <div id="search-form">
-        <input type="text" id="search-input" placeholder="Search for a country" />
-        <button type="submit" onclick="countrySearch()" id="search-button">Search</button>
+      <div autocomplete="off" >
+        <div class="autocomplete" style="width:300px;">
+          <input id="myInput" type="text" name="myCountry" placeholder="Country">
+        </div>
+        <button type="submit" onclick="searchCountry()" id="sbutton">Search</button>
       </div>
+     
 
 
 
@@ -192,15 +192,9 @@
       }
     </script> -->
 
-    <script>
-
-      function hello (h){
-        console.log(h)
-      }
-
-    </script>
-
+    
     <script src="./js/index.js"></script>
     <script src="./js/globe.js"></script>
+    <script src="./js/countries.js"></script>
   </body>
 </html>

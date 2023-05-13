@@ -1,13 +1,15 @@
 const colorScale = d3.scaleSequentialSqrt(d3.interpolateYlOrRd);
+
+let world;
+
 const getVal = (feat) =>
   feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedAdminCountryData6.json")
+fetch("../data/finalUpdatedGeoJSON_1.json")
   .then((res) => res.json())
   .then((countries) => {
-    // console.log(countries)
     const maxVal = Math.max(...countries.features.map(getVal));
     colorScale.domain([0, maxVal]);
-    const world = Globe()
+    world = Globe()
       .globeImageUrl("//unpkg.com/three-globe/example/img/earth-night.jpg")
       .backgroundImageUrl("//unpkg.com/three-globe/example/img/night-sky.png")
       .lineHoverPrecision(0)
@@ -44,7 +46,6 @@ fetch("../data/finalUpdatedAdminCountryData6.json")
             );
 
             const relevantReservation = Object.keys(d?.releventReservations);
-            // const relevantReservationValue = Object.values(d?.releventReservations);
 
             //  Including reservations into the UNTreatyBodyData
             UNTreatyBodyData.map((data) => {
@@ -342,16 +343,36 @@ function downloadPdf(button, dynamicValue) {
       doc.textWithLink("Link", 10, 130, {
         url: "https://www.unwomen.org/en/csw/communications-procedure",
       }); */
-      
+
       // define the table data
       const data = [
         ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
-        ["Human Rights Council", "", "Working Groups", "Working Group on Arbitrary Detention (WGAD)"],
-        ["", "", "Special Rapporteurs", "Working Group on Enforced or Involuntary Disappearances (WGEID)"],
-        ["", "Special Procedures", "", "Working Group on Enforced or Involuntary Disappearances (WGEID)"],
+        [
+          "Human Rights Council",
+          "",
+          "Working Groups",
+          "Working Group on Arbitrary Detention (WGAD)",
+        ],
+        [
+          "",
+          "",
+          "Special Rapporteurs",
+          "Working Group on Enforced or Involuntary Disappearances (WGEID)",
+        ],
+        [
+          "",
+          "Special Procedures",
+          "",
+          "Working Group on Enforced or Involuntary Disappearances (WGEID)",
+        ],
         ["", "", "", "Submission to Special Procedures"],
-        ["", "HRC Complaint Procedure", "", "Submitting information to Special Rapporteur > Link"],
-        ["ECOSOC", "Commission on the Status of Women", "", "Link", ""],       
+        [
+          "",
+          "HRC Complaint Procedure",
+          "",
+          "Submitting information to Special Rapporteur > Link",
+        ],
+        ["ECOSOC", "Commission on the Status of Women", "", "Link", ""],
       ];
 
       // define the table options
@@ -368,55 +389,31 @@ function downloadPdf(button, dynamicValue) {
           doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
         },
         ...options,
-      });    
-
+      });
 
       doc.save(`Human Rights Mechanisms_${country}.pdf`);
     });
 }
 
-// Search function
+const searchCountry = () => {
+  // Get the value of the search input field
+  const query = document.getElementById("myInput").value.toLowerCase();
 
-const globeContainer = document.getElementById("globeViz");
-const searchForm = document.getElementById("search-form");
-const searchInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
+  // Filter the countries data to find the matching country
+  const countries = world.polygonsData();
 
-function countrySearch() {
-  const globeLayer = new deck.GlobeLayer({
-    id: "globe",
-    // Set your globe options here
-    // ...
-    // Load your GeoJSON data as a GeoJsonLayer
-    layers: [
-      new deck.GeoJsonLayer({
-        id: "countries",
-        data: "path/to/your/countries.geojson",
-        // Set your layer options here
-        // ...
-      }),
-    ],
-  });
-  const deckgl = new deck.DeckGL({
-    container: globeContainer,
-    layers: [globeLayer],
-  });
-
-  searchForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    console.log(event.target.value);
-
-    const userInput = searchInput.value;
-
-    globeLayer.setProps({
-      layers: [
-        new deck.GeoJsonLayer({
-          id: "countries",
-          data: "../data/finalUpdatedGeoJSON_1.json",
-          filter: ["match", ["get", "name"], [userInput], true, false],
-        }),
-      ],
-    });
-  });
-}
+  const country = countries.find((c) =>
+    c.properties.ADMIN.toLowerCase().includes(query)
+  );
+  // If a matching country is found, focus the map on it
+  if (country) {
+    const bbox = country.bbox;
+    let latitude_diff = bbox[3] - bbox[1];
+    let longitude_diff = bbox[2] - bbox[0];
+    let min_latitude = bbox[1];
+    let max_longitude = bbox[2];
+    let latitude_avg = min_latitude + latitude_diff / 2;
+    let longitude_avg = max_longitude + longitude_diff / 2;
+    world.pointOfView({lat: latitude_avg, lng: longitude_avg},1);    
+  }
+};
