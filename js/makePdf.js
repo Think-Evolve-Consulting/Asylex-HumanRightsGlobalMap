@@ -147,72 +147,14 @@ function downloadPdf(button, dynamicValue) {
         });
       }
 
-      // create a new page
+      // create a new page // 2nd page
       doc.addPage();
 
       // add some content to the second page
       doc.setFontSize(18);
       doc.setFont("helvetica", "bold");
       doc.setTextColor("#000000");
-      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");
-
-      /* // Heading
-      doc.setFontSize(16);
-      doc.setFont("helvetica", "normal");
-      doc.text("Institution", 10, 30);
-      doc.text("Mechanism", 70, 30);
-
-      // Next line
-      doc.text("Name and Link Complaint Procedure", 60, 80);
-
-      // Text link style
-      doc.setFontSize(12);
-      doc.setFont("times", "normal");
-      doc.setTextColor("#3083ff");
-
-      // Institution
-      doc.text("Human Rights Council", 10, 40);
-      doc.text("ECOSOC", 10, 50);
-
-      // Mechanism
-      doc.text("Special Procedures", 70, 40);
-      doc.text("HRC Complaint Procedure", 70, 50);
-      doc.text("Commission on the Status of Women", 70, 60);
-
-      // Blank
-      doc.text("Working Groups", 140, 40);
-      doc.text("Special Rapporteurs", 140, 50);
-
-      // Name and Link Complaint Procedure
-      doc.textWithLink("Working Group on Arbitrary Detention (WGAD)", 10, 90, {
-        url: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
-      });
-
-      doc.textWithLink(
-        "Working Group on Enforced or Involuntary Disappearances (WGEID)",
-        10,
-        100,
-        {
-          url: "https://www.ohchr.org/en/special-procedures/wg-disappearances/reporting-disappearance-working-group",
-        }
-      );
-
-      doc.textWithLink("Submission to Special Procedures", 10, 110, {
-        url: "https://spsubmission.ohchr.org",
-      });
-
-      doc.textWithLink(
-        "Submitting information to Special Rapporteur",
-        10,
-        120,
-        {
-          url: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM",
-        }
-      );
-
-      doc.textWithLink("Link", 10, 130, {
-        url: "https://www.unwomen.org/en/csw/communications-procedure",
-      }); */
+      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");      
 
       // define the table data
 
@@ -261,6 +203,7 @@ function downloadPdf(button, dynamicValue) {
         },
         ...options,
       });
+
       doc.save(`Human Rights Mechanisms_${country}.pdf`);
     });
 }
