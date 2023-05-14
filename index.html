@@ -137,21 +137,13 @@
 
     <div id="title">
       <h1>Human Rights Mechanisms</h1>
-
-      <!-- <div id="search-form">
-        <input type="text" id="search-input" placeholder="Search for a country" />       
-        <button type="submit" onclick="searchCountry()" id="search-button">Search</button>            
-      </div> -->
-
+      
       <div autocomplete="off" >
         <div class="autocomplete" style="width:300px;">
-          <input id="myInput" type="text" name="myCountry" placeholder="Country">
+          <input id="myInput" type="text" name="myCountry" placeholder="Search for a country">
         </div>
         <button type="submit" onclick="searchCountry()" id="sbutton">Search</button>
       </div>
-     
-
-
 
     </div>
 
@@ -164,7 +156,7 @@
       </p>
     </div>
 
-    <!-- <script>
+  <!-- <script>
       window.jsPDF = window.jspdf.jsPDF;
       function downloadPdf() {
         const { jsPDF } = window.jspdf;
@@ -195,6 +187,7 @@
     
     <script src="./js/index.js"></script>
     <script src="./js/globe.js"></script>
-    <script src="./js/countries.js"></script>
+    <script src="./js/autocomplete.js"></script>
+    <script src="./js/makePdf.js"></script>
   </body>
 </html>
