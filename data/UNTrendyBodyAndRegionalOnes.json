@@ -61,42 +61,42 @@
       {
         "institution": "ACERWC",
         "abbreviations": "African Committee of Experts on the Rights and Welfare of the Child",
-        "IndividualComplaint": "https://www.acerwc.africa/en/page/guidelines-consideration-communications-and-monitoring-implementation-decisions"
+        "individualComplaint": "https://www.acerwc.africa/en/page/guidelines-consideration-communications-and-monitoring-implementation-decisions"
       },
       {
         "institution": "ECtHR",
         "abbreviations": "European Court of Human Rights",
-        "IndividualComplaint": "https://r39.echr.coe.int"
+        "individualComplaint": "https://r39.echr.coe.int"
       },
       {
         "institution": "Frontex",
         "abbreviations": "Frontex",
-        "IndividualComplaint": "https://frontex.europa.eu"
+        "individualComplaint": "https://frontex.europa.eu"
       },
       {
         "institution": "ACHPR",
         "abbreviations": "African Commission on Human and Peoples' Rights",
-        "IndividualComplaint": "https://achpr.au.int/en/guidelines-submitting-complaints"
+        "individualComplaint": "https://achpr.au.int/en/guidelines-submitting-complaints"
       },
       {
         "institution": "EACJ",
         "abbreviations": "East African Court of Justice",
-        "IndividualComplaint": "https://www.justiceinitiative.org/publications/east-african-court-justice"
+        "individualComplaint": "https://www.justiceinitiative.org/publications/east-african-court-justice"
       },
       {
         "institution": "IACHR",
         "abbreviations": "Inter-American Commission on Human Rights",
-        "IndividualComplaint": "https://www.oas.org/en/iachr/"
+        "individualComplaint": "https://www.oas.org/en/iachr/"
       },
       {
         "institution": "ACtHPR",
         "abbreviations": "African Court on Human and Peoples' Rights",
-        "IndividualComplaint": "https://www.african-court.org/wpafc/how-to-file-a-case/"
+        "individualComplaint": "https://www.african-court.org/wpafc/how-to-file-a-case/"
       },
       {
         "institution": "ECOWAS",
         "abbreviations": "Economic Community of West African States",
-        "IndividualComplaint": "http://www.courtecowas.org/practical-information/"
+        "individualComplaint": "http://www.courtecowas.org/practical-information/"
       }
     ]
   }

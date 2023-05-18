@@ -4,10 +4,9 @@ let world;
 
 const getVal = (feat) =>
   feat.properties.GDP_MD_EST / Math.max(1e5, feat.properties.POP_EST);
-fetch("../data/finalUpdatedGeoJSON_1.json")
+fetch("../data/countries_small.geojson")
   .then((res) => res.json())
   .then((countries) => {
-    // console.log(countries)
     const maxVal = Math.max(...countries.features.map(getVal));
     colorScale.domain([0, maxVal]);
     world = Globe()
@@ -19,12 +18,12 @@ fetch("../data/finalUpdatedGeoJSON_1.json")
         countries.features.filter((d) => d.properties.ISO_A2 !== "AQ")
       )
       .polygonAltitude(0.06)
-      .polygonCapColor((feat) => feat?.properties?.color) // polygon color coming from color property
+      .polygonCapColor((feat) => feat?.properties?.colour) // polygon color coming from color property
       .polygonSideColor(() => "rgba(0, 100, 0, 0.15)") // ground color
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
-        
-        if (d.UNTreatyBody === undefined) {
+
+        if (d.UNTreatyBody.length === 0 && d.regionalHumanRightsMechanism.length === 0) {
           showPopup(`
                   <div class="top-part content">
                     <h2 style="margin: 0;">${d.BRK_NAME}</h2>
@@ -35,10 +34,133 @@ fetch("../data/finalUpdatedGeoJSON_1.json")
           return;
         }
 
+        
+
+        /// matching the data start point // for additional data
         fetch("../data/UNTrendyBodyAndRegionalOnes.json")
           .then((res) => res.json())
           .then((committeesDetails) => {
-            let committees = d?.UNTreatyBody;
+
+            let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
+            let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
+
+
+            let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(
+              function (item) {
+                return committees.indexOf(item?.committee) !== -1;
+              }
+            );
+            let regionalHumanRightsMechanismData =
+              committeesDetails?.regionalOnes?.filter(function (item) {
+                return institutions.indexOf(item?.institution) !== -1;
+              });             
+            
+            // Inserting additional data to the object // UNTreatyBody
+              d.UNTreatyBody = d.UNTreatyBody.map(((data, i) => ({
+              ...data,
+              ...UNTreatyBodyData[i]
+            })));
+
+            // Inserting additional data to the object // Regional HumanRights Mechanism
+              d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => ({
+              ...data,
+              ...regionalHumanRightsMechanismData[i]
+            })));
+
+
+        //////////////// without additional data code start
+        // let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
+        let Inquiry = d?.UNTreatyBody.map((obj) => obj.Inquiry);
+        let RR = d?.UNTreatyBody.map((obj) => obj.RelevantReservations); // Relevant Reservations
+        let IndividualComplaint = d?.UNTreatyBody.map(
+          (obj) => obj.IndividualComplaint
+        );
+        // let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
+        let IndividualComplaintRHRM = d?.regionalHumanRightsMechanism.map((obj) => obj.IndividualComplaint);
+        // Passing parameter to the download pdf
+        const string = `${d.BRK_NAME}_${committees}_${institutions}_${IndividualComplaint}_${Inquiry}_${RR}_${IndividualComplaintRHRM}`;
+        
+        // Making html popup content
+        let UNTreatyBodyTable = [
+          `<div class="top-part">
+          <h2 style="margin: 0;">${
+            d.BRK_NAME
+          } <button id="downloadPdf" onclick="downloadPdf(this, '${string}')" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
+          <button  onclick="hidePopup()" class="closeBtn"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+        </div>
+        <h4>UN Treaty Body:</h4>
+          <table>
+          <tr>
+            <th>Committee</th>
+            <th>Individual Complaint</th>
+            <th>Inquiry</th>
+            <th>Relevant Reservations</th>
+          </tr>
+          ${d.UNTreatyBody?.map((un) => {           
+            return `<tr>
+              <td>${un?.abbreviations}</td>
+              <td>${
+                un?.IndividualComplaint == "Yes"
+                  ? `<a target="_blank" href="https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies">Yes</a>`
+                  : "-"
+              }</td>
+              <td>${
+                un?.Inquiry == "Yes"
+                  ? `<a target="_blank" href="https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries">Yes</a>`
+                  : "-"
+              }</td>
+              <td>${un.RelevantReservations}</td>
+            </tr>`;
+          }).join(" ")}
+          </table>`,
+        ];
+        let regionalHumanRightsMechanismTable = [
+          `
+        <h4>Regional Human Rights Mechanism:</h4>
+        <table>
+          <tr>
+            <th>Institution</th>
+            <th>Individual Complaint</th>
+          </tr>
+          ${d.regionalHumanRightsMechanism
+            ?.map((un) => {
+              return `<tr>
+              <td>${un?.abbreviations}</td>
+              <td>${un?.IndividualComplaint == "Yes"
+              ? `<a target="_blank" href=${un?.individualComplaint}>Yes</a>`
+              : "-"}</td>
+            </tr>`;
+            })
+            .join(" ")}
+        </table>`,
+        ];
+
+        showPopup(`
+          ${
+            d?.UNTreatyBody.length === 0
+              ? `<h4>UN Treaty Body:</h4><p> In <strong>${d.BRK_NAME}</strong>, no relevant international human rights complaint mechanisms are available for (rejected) asylum seekers. If you still wish to take initiative in the context, please assess the further possibilities applicable to all countries listed below. </p>`
+              : UNTreatyBodyTable
+          }
+          ${
+            d?.regionalHumanRightsMechanism.length === 0 ||
+            !d?.regionalHumanRightsMechanism
+              ? `<h4>Regional Human Rights Mechanism:</h4><p>In <strong>${d.BRK_NAME}</strong>, no Regional Human Rights Mechanism are available for (rejected) asylum seekers.</p>`
+              : regionalHumanRightsMechanismTable
+          }
+          `);
+        ////////////////////// without additional data code end
+      });
+
+      ///////////////////// Previous code start ///////////////////////
+
+        /* fetch("../data/UNTrendyBodyAndRegionalOnes.json")
+          .then((res) => res.json())
+          .then((committeesDetails) => {
+
+            // Data getting from geojson
+            let committees = d?.UNTreatyBody.map(obj => obj.Committee);
+            
+
             let institutions = d?.regionalHumanRightsMechanism;
             let relevantReservations = d?.releventReservations;
 
@@ -89,6 +211,7 @@ fetch("../data/finalUpdatedGeoJSON_1.json")
                   }).join(" ")}
               </div>`,
             ];
+
             let RegionalHuman = [
               `<h4 style="margin: 0;">Regional Human Rights Mechanism:</h4> <ul>${regionalHumanRightsMechanismData
                 ?.map((un) => {
@@ -118,7 +241,8 @@ fetch("../data/finalUpdatedGeoJSON_1.json")
                       : RegionalHuman
                   }
                 </div>`);
-          });
+          }); */
+      ///////////////////// Previous code end ///////////////////////
       })
 
       .onPolygonHover((hoverD) =>
@@ -132,7 +256,7 @@ fetch("../data/finalUpdatedGeoJSON_1.json")
   });
 
 
-
+// Set country point of view Function
 const searchCountry = () => {
   // Get the value of the search input field
   const query = document.getElementById("myInput").value.toLowerCase();
@@ -152,6 +276,6 @@ const searchCountry = () => {
     let max_longitude = bbox[2];
     let latitude_avg = min_latitude + latitude_diff / 2;
     let longitude_avg = max_longitude + longitude_diff / 2;
-    world.pointOfView({lat: latitude_avg, lng: longitude_avg},1);    
+    world.pointOfView({ lat: latitude_avg, lng: longitude_avg }, 1);
   }
 };

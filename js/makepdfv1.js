@@ -7,15 +7,8 @@ function downloadPdf(button, dynamicValue) {
   const { jsPDF } = window.jspdf;
   var doc = new jsPDF();
   const country = dynamicValue.split("_")[0];
-
   let committees = dynamicValue.split("_")[1];
-  let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
-  let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
-
-
   let institutions = dynamicValue.split("_")[2];
-  let IndividualComplaint = dynamicValue.split("_")[3].split(',').map(item => item.trim());
-  let IndividualComplaintRHRM = dynamicValue.split("_")[6].split(',').map(item => item.trim());
 
   fetch("../data/UNTrendyBodyAndRegionalOnes.json")
     .then((res) => res.json())
@@ -29,12 +22,13 @@ function downloadPdf(button, dynamicValue) {
         committeesDetails?.regionalOnes?.filter(function (item) {
           return institutions.indexOf(item?.institution) !== -1;
         });
-      
 
       // add text to the PDF document
       doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
       doc.text(`For`, 105, 18, null, null, "center");
+
       const imageURL = "../data/AsyLexGlobalLogo.jpg";
+
       doc.addImage(imageURL, "PNG", 165, 5, 40, 40);
 
       // Country Name
@@ -42,7 +36,6 @@ function downloadPdf(button, dynamicValue) {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(18);
       doc.text(`${country}`, 105, 26, null, null, "center");
-
 
       // UN Treaty Body title
       doc.setFontSize(16);
@@ -71,35 +64,22 @@ function downloadPdf(button, dynamicValue) {
           doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
         }
       } else {
+        UNTreatyBodyData.map((un, i) => {
+          // UN Treaty Body commits Names
+          doc.setFontSize(16);
+          doc.setFont("times", "normal");
+          doc.setTextColor("#000000");
+          doc.text(`> ${un?.abbreviations}`, 15, 50 + i * 30);
 
-        // Pushing the IndividualComplaint to inside the object
-        UNTreatyBodyData = UNTreatyBodyData.map((row, index) => ({
-          ...row,
-          IndividualComplaint: IndividualComplaint[index],
-          Inquiry: Inquiry[index],
-          relevantReservations: relevantReservations[index]          
-        }));
-
-        let columns = [
-          { header: 'Committee', dataKey: 'abbreviations' },
-          { header: 'Individual Complaint', dataKey: 'IndividualComplaint' },
-          { header: 'Inquiry', dataKey: 'Inquiry' },
-          { header: 'Relevant Reservations', dataKey: 'relevantReservations'}
-        ];
-        
-        doc.autoTable({
-          head: [columns.map(column => column.header)],
-          body: UNTreatyBodyData.map(row => columns.map(column => row[column.dataKey])),
-          didDrawCell: function (data) {
-            // draw a border around the cell
-            doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
-          },
-          bodyStyles: { fontSize: 10 },
-          headStyles: { textColor: ["fff", 0, 0], fontSize: 12, fontStyle: 'bold' },
-          startY: 50,
-          startX: 10
+          // UN Treaty Body commits Links
+          doc.setFontSize(12);
+          doc.setFont("times", "normal");
+          doc.setTextColor("#3083ff");
+          doc.textWithLink("Individual Complaint", 20, 60 + i * 30, {
+            url: un?.individualComplaintLink,
+          });
+          doc.textWithLink("Inquiry", 20, 70 + i * 30, { url: un?.enquiry });
         });
-
       }
 
       if (UNTreatyBodyData?.length === 0) {
@@ -153,8 +133,7 @@ function downloadPdf(button, dynamicValue) {
           }
         }
       } else {
-
-        /* regionalHumanRightsMechanismData.map((un, i) => {
+        regionalHumanRightsMechanismData.map((un, i) => {
           // Links
           doc.setFontSize(12);
           doc.setFont("times", "normal");
@@ -165,32 +144,8 @@ function downloadPdf(button, dynamicValue) {
             90 + (UNTreatyBodyData.length - 1) * 30 + i * 10,
             { url: un?.IndividualComplaint }
           );
-        }); */
-
-        // Pushing the IndividualComplaint to inside the object
-        regionalHumanRightsMechanismData = regionalHumanRightsMechanismData.map((row, index) => ({
-          ...row,
-          IndividualComplaintRHRM: IndividualComplaintRHRM[index]
-        }));
-
-        let columns = [
-          { header: 'Institution', dataKey: 'abbreviations' },
-          { header: 'Individual Complaint', dataKey: 'IndividualComplaintRHRM' },                   
-        ];
-        
-        doc.autoTable({
-          head: [columns.map(column => column.header)],
-          body: regionalHumanRightsMechanismData.map(row => columns.map(column => row[column.dataKey])),
-          didDrawCell: function (data) {
-            // draw a border around the cell
-            doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
-          },
-          bodyStyles: { fontSize: 10 },
-          headStyles: { textColor: ["fff", 0, 0], fontSize: 12, fontStyle: 'bold' },
-          startY: 90 + (UNTreatyBodyData.length - 1) * 30,
-          startX: 10
         });
-}
+      }
 
       // create a new page // 2nd page
       doc.addPage();
