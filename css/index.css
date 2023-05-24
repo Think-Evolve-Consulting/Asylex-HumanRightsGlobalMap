@@ -15,7 +15,7 @@ body {
     background-color: #fff;
     padding: 1%;
     border: 1px solid #ccc;
-    margin: 2%;  
+    margin: 1%;  
     background-color: rgb(216, 248, 248);
     width: 20%;
     height: 60%;
@@ -69,6 +69,7 @@ body {
     width: 25%;
     display: none;
     max-height: 50%;
+    z-index: 1;
   }
   
   #tableBtn {
@@ -190,14 +191,22 @@ body {
     }
   
     #table {
+      bottom: 15%;
       width: 90%;
     }
   
     #footer {
       font-size: x-small;
-      right: 3%;   
+      margin-right: 3%;
     }
-  
+
+    #footer p{
+      display: flex;
+      justify-content: end;
+    }
+
+    
+
    }
 
 
@@ -344,6 +353,7 @@ tr:nth-child(even) {
   padding: 5%;
   width: 210px !important;
   margin-left: 78px !important;
+  z-index: 0;
 }
 
 .colorTab p {
