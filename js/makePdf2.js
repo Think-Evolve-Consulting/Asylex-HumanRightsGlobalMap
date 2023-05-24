@@ -84,7 +84,7 @@ function downloadPdf(button, dynamicValue) {
           { header: "Committee", dataKey: "abbreviations" },
           { header: "Individual Complaint", dataKey: "IndividualComplaint" },
           { header: "Inquiry", dataKey: "Inquiry" },
-          { header: "Relevant Reservations", dataKey: "relevantReservations" }          
+          { header: "Relevant Reservations", dataKey: "relevantReservations" },
         ];
 
         doc.autoTable({
@@ -106,10 +106,12 @@ function downloadPdf(button, dynamicValue) {
             textColor: ["fff", 0, 0],
             fontSize: 12,
             fontStyle: "bold",
-          },          
+          },
           startY: 50,
           startX: 10,
-        });        
+        });
+
+        
       }
 
       if (UNTreatyBodyData?.length === 0) {
@@ -224,7 +226,7 @@ function downloadPdf(button, dynamicValue) {
       doc.setFontSize(18);
       doc.setFont("helvetica", "bold");
       doc.setTextColor("#000000");
-      doc.text("HR Mechanisms in All States", 105, 20, null, null, "center");
+      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");
 
       // define the table data
 
@@ -232,12 +234,12 @@ function downloadPdf(button, dynamicValue) {
         ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
         [
           "",
-          "",
+          "Human Rights Council",
           "",
           "Working Group on Arbitrary Detention (WGAD)",
         ],
         [
-          "Human Rights Council",
+          "",
           "",
           "Working Groups",
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
@@ -256,7 +258,7 @@ function downloadPdf(button, dynamicValue) {
           "Submitting information to Special Rapporteur",
         ],
         [
-          "Human Rights Council",
+          "",
           "Human Rights Council Complaint Procedure",
           "Human Rights Council",
           "HRC Complaint Procedure (frequently asked questions)",
@@ -267,25 +269,60 @@ function downloadPdf(button, dynamicValue) {
 
       // define the table options
       const options = {
-        startY: 30,
+        startY: 20,
       };
 
       // create the table
       doc.autoTable({
         head: [data[0]],
         body: data.slice(1),
-       /*  didDrawCell: function (data) {
+        didDrawCell: function (data) {
           // draw a border around the cell
           doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
-        }, */
+        },
         ...options,
-      });     
+      });
+
+      //
+      doc.addPage();
+      // Define your table data
+      var tableData = [
+        ["Link 1", "https://example.com/link1"],
+        ["Link 2", "https://example.com/link2"],
+        // Add more rows as needed
+      ];
+
+      // Define table headers
+      var tableHeaders = ["Title", "Link"];
+
+      // Create the table using jspdf-autotable-alt
+      doc.autoTableAlt({
+        head: [tableHeaders],
+        body: tableData,
+        columnStyles: {
+          Link: {
+            fontStyle: "bold",
+            textColor: [0, 0, 255],
+            cellWidth: "auto",
+          },
+        },
+        didDrawCell: function (data) {
+          // Check if the current cell is in the "Link" column
+          if (data.column.dataKey === "Link") {
+            var text = data.cell.raw;
+            var link = data.row.raw[1];
+            doc.setTextColor(0, 0, 255); // Set text color to blue
+            doc.textWithLink(text, data.cell.x, data.cell.y + 5, { url: link });
+          }
+        },
+      });
 
       doc.save(`Human Rights Mechanisms_${country}.pdf`);
     });
 }
 
 function downloadPdf2() {
+
   //  Define your table data
       var tableData = [
         ["Link 1", { text: "Link", link: "https://example.com/link1" }],

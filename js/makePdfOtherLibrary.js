@@ -7,7 +7,6 @@ function downloadPdf(button, dynamicValue) {
   const { jsPDF } = window.jspdf;
   var doc = new jsPDF();
   const country = dynamicValue.split("_")[0];
-
   let committees = dynamicValue.split("_")[1];
   let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
   let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
@@ -30,7 +29,6 @@ function downloadPdf(button, dynamicValue) {
           return institutions.indexOf(item?.institution) !== -1;
         });
 
-
       // add text to the PDF document
       doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
       doc.text(`For`, 105, 18, null, null, "center");
@@ -42,7 +40,6 @@ function downloadPdf(button, dynamicValue) {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(18);
       doc.text(`${country}`, 105, 26, null, null, "center");
-
 
       // UN Treaty Body title
       doc.setFontSize(16);
@@ -71,7 +68,6 @@ function downloadPdf(button, dynamicValue) {
           doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
         }
       } else {
-
         // Pushing the IndividualComplaint to inside the object
         UNTreatyBodyData = UNTreatyBodyData.map((row, index) => ({
           ...row,
@@ -80,36 +76,22 @@ function downloadPdf(button, dynamicValue) {
           relevantReservations: relevantReservations[index],
         }));
 
+        console.log(UNTreatyBodyData);
+
         let columns = [
           { header: "Committee", dataKey: "abbreviations" },
           { header: "Individual Complaint", dataKey: "IndividualComplaint" },
           { header: "Inquiry", dataKey: "Inquiry" },
-          { header: "Relevant Reservations", dataKey: "relevantReservations" }          
+          { header: "Relevant Reservations", dataKey: "relevantReservations" },
         ];
 
-        doc.autoTable({
-          head: [columns.map((column) => column.header)],
-          body: UNTreatyBodyData.map((row) =>
-            columns.map((column) => row[column.dataKey])
-          ),
-          didDrawCell: function (data) {
-            // draw a border around the cell
-            doc.rect(
-              data.cell.x,
-              data.cell.y,
-              data.cell.width,
-              data.cell.height
-            );
-          },
-          bodyStyles: { fontSize: 10 },
-          headStyles: {
-            textColor: ["fff", 0, 0],
-            fontSize: 12,
-            fontStyle: "bold",
-          },          
-          startY: 50,
-          startX: 10,
-        });        
+        /* var tableData = [
+          { title: "Link 1", link: "https://example.com/link1" },
+          { title: "Link 2", link: "https://example.com/link2" },
+          // Add more objects as needed
+        ]; */
+
+        // Define table headers
       }
 
       if (UNTreatyBodyData?.length === 0) {
@@ -184,7 +166,7 @@ function downloadPdf(button, dynamicValue) {
           })
         );
 
-        let columns = [
+        /* let columns = [
           { header: "Institution", dataKey: "abbreviations" },
           {
             header: "Individual Complaint",
@@ -214,7 +196,7 @@ function downloadPdf(button, dynamicValue) {
           },
           startY: 90 + (UNTreatyBodyData.length - 1) * 30,
           startX: 10,
-        });
+        }); */
       }
 
       // create a new page // 2nd page
@@ -224,118 +206,228 @@ function downloadPdf(button, dynamicValue) {
       doc.setFontSize(18);
       doc.setFont("helvetica", "bold");
       doc.setTextColor("#000000");
-      doc.text("HR Mechanisms in All States", 105, 20, null, null, "center");
+      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");
 
       // define the table data
 
       const data = [
         ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
         [
-          "",
-          "",
-          "",
-          "Working Group on Arbitrary Detention (WGAD)",
-        ],
-        [
           "Human Rights Council",
           "",
           "Working Groups",
+          "Working Group on Arbitrary Detention (WGAD)",
+        ],
+        [
+          "",
+          "",
+          "Special Rapporteurs",
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
         ],
         [
           "",
           "Special Procedures",
-          "Special Rapporteurs",
+          "",
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
         ],
         ["", "", "", "Submission to Special Procedures"],
         [
           "",
+          "HRC Complaint Procedure",
           "",
-          "",
-          "Submitting information to Special Rapporteur",
+          "Submitting information to Special Rapporteur > Link",
         ],
-        [
-          "Human Rights Council",
-          "Human Rights Council Complaint Procedure",
-          "Human Rights Council",
-          "HRC Complaint Procedure (frequently asked questions)",
-        ],
-
-        ["ECOSOC", "Commission on the Status of Women", "", "Link"],
+        ["ECOSOC", "Commission on the Status of Women", "", "Link", ""],
       ];
 
-      // define the table options
+      /*  // define the table options
       const options = {
-        startY: 30,
+        startY: 20,
       };
 
       // create the table
       doc.autoTable({
         head: [data[0]],
         body: data.slice(1),
-       /*  didDrawCell: function (data) {
+        didDrawCell: function (data) {
           // draw a border around the cell
           doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
-        }, */
+        },
         ...options,
-      });     
+      }); */
 
-      doc.save(`Human Rights Mechanisms_${country}.pdf`);
+      //
+
+      // doc.save(`Human Rights Mechanisms_${country}.pdf`);
+      pdfMake.createPdf(docDefinition).download("table_with_links.pdf");
     });
 }
 
-function downloadPdf2() {
-  //  Define your table data
-      var tableData = [
-        ["Link 1", { text: "Link", link: "https://example.com/link1" }],
-        ["Link 2", { text: "Go to Link 2", link: "https://example.com/link2" }],
-        // Add more rows as needed
-      ];
+function downloadPdf(button, dynamicValue) {
 
-      // Define table headers
-      var tableHeaders = ["Title", "Link"];
+  const country = dynamicValue.split("_")[0];
 
-      // Create the table definition
-      var table = {
-        headerRows: 1,
-        widths: ['*', '*'],
-        body: [tableHeaders, ...tableData],
-      };
+  let committees = dynamicValue.split("_")[1];
+  let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
+  let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
 
-      // Define the document definition
-      var docDefinition = {
-        content: [
-          { text: 'Table with Links', style: 'header' },
-          { table: table },
-        ],
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            margin: [0, 0, 0, 10]
-          },
-          link: {
-            color: 'blue',
-            decoration: 'underline'
-          }
-        },
-        defaultStyle: {
-          // Set the default style for links
-          link: true
-        },
-        // Add an event handler for link clicks
-        // This will navigate to the link URL when clicked
-        // Note: This works in the generated PDF, not in the browser preview
-        // Use the downloaded PDF to test the link functionality
-        // It may not work if the link is an external URL due to security restrictions
-        eventHandlers: {
-          'link': function (event, link) {
-            window.open(link, '_blank');
-          }
-        }
-      };
 
-      // Generate the PDF
-      pdfMake.createPdf(docDefinition).download('table_with_links.pdf'); 
+  let institutions = dynamicValue.split("_")[2];
+  let IndividualComplaint = dynamicValue.split("_")[3].split(',').map(item => item.trim());
+  let IndividualComplaintRHRM = dynamicValue.split("_")[6].split(',').map(item => item.trim());
+
+
+  fetch("../data/UNTrendyBodyAndRegionalOnes.json")
+    .then((res) => res.json())
+    .then((committeesDetails) => {
+      let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (item) {
+        return committees.indexOf(item?.committee) !== -1;
+      });
+      let regionalHumanRightsMechanismData = committeesDetails?.regionalOnes?.filter(function (item) {
+          return institutions.indexOf(item?.institution) !== -1;
+        });
+      });
+    
+   // end 
+  
+  const UNTreatyBodyData = [
+    {
+      committee: "CCPR",
+      abbreviations: "Human Rights Committee",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "Yes",
+      Inquiry: "-",
+      relevantReservations: "-",
+    },
+    {
+      committee: "CEDAW",
+      abbreviations:
+        "Committee on the Elimination of Discrimination against Women",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "Yes",
+      Inquiry: "-",
+      relevantReservations: "-",
+    },
+    {
+      committee: "CAT",
+      abbreviations: "Committee Against Torture",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "Yes",
+      Inquiry: "Yes",
+      relevantReservations: "Arts. 2(d)(f) and 5(a)",
+    },
+    {
+      committee: "CED",
+      abbreviations: "Committee on Enforced Disappearance",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "-",
+      Inquiry: "Yes",
+      relevantReservations: "-",
+    },
+    {
+      committee: "CESCR",
+      abbreviations: "Committee on Economic, Social and Cultural Rights",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "Yes",
+      Inquiry: "Yes",
+      relevantReservations: "-",
+    },
+    {
+      committee: "CRPD",
+      abbreviations: "Committee on the Rights of Persons with Disabilities",
+      individualComplaint: "yes",
+      individualComplaintLink:
+        "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      enquiry:
+        "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
+      IndividualComplaint: "-",
+      Inquiry: "Yes",
+      relevantReservations: "-",
+    },
+  ]; 
+
+
+  
+  // Define table headers
+  const tableHeaders = ["Committee","Individual Complaint","Inquiry","Relevant Reservations"];
+
+  // Map the array of objects to the table data structure
+  const mappedData =  UNTreatyBodyData.map(function (item) {
+    return [
+      item?.abbreviations,
+      { text: "Yes", link: item?.individualComplaintLink },
+      item?.Inquiry == "Yes" ? { text: "Yes", link: item?.enquiry } : "-",
+      item?.relevantReservations,
+    ];
+  });
+
+  
+
+  // Create the table definition
+  const UNTreatyBodyTable = {
+    headerRows: 1,
+    widths: ["*", "*", "*", "*"],
+    body: [tableHeaders, ...mappedData],
+  };
+
+  // Define the document definition
+  const docDefinition = {
+    content: [
+      { text: "Human Rights Mechanisms", style: "header", alignment: "center" },
+      { text: "For", style: "subheader", alignment: "center" },
+      { text: country, style: "header", alignment: "center" },
+      { text: "UN Treaty Body:", style: "header" },
+      { table: UNTreatyBodyTable },
+    ],
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+        margin: [0, 0, 0, 10],
+      },
+      link: {
+        color: "blue",
+        decoration: "underline",
+      },
+    },
+    defaultStyle: {
+      // Set the default style for links
+      link: true,
+    },
+    // Add an event handler for link clicks
+    // This will navigate to the link URL when clicked
+    // Note: This works in the generated PDF, not in the browser preview
+    // Use the downloaded PDF to test the link functionality
+    // It may not work if the link is an external URL due to security restrictions
+    eventHandlers: {
+      link: function (event, link) {
+        window.open(link, "_blank");
+      },
+    },
+  };
+
+  // Generate the PDF
+  pdfMake.createPdf(docDefinition).download(`Human Rights Mechanisms_${country}.pdf`);
+
+  
 }

@@ -23,6 +23,8 @@ fetch("../data/countries_small.geojson")
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
 
+        // console.log(d)
+
         if (d.UNTreatyBody.length === 0 && d.regionalHumanRightsMechanism.length === 0) {
           showPopup(`
                   <div class="top-part content">
@@ -43,24 +45,28 @@ fetch("../data/countries_small.geojson")
 
             let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
             let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
-
-
+            
             let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(
               function (item) {
-                return committees.indexOf(item?.committee) !== -1;
+                return (committees.indexOf(item?.committee) !== -1) ; 
               }
-            );
+            );           
+
+            
             let regionalHumanRightsMechanismData =
               committeesDetails?.regionalOnes?.filter(function (item) {
                 return institutions.indexOf(item?.institution) !== -1;
               });             
             
             // Inserting additional data to the object // UNTreatyBody
-              d.UNTreatyBody = d.UNTreatyBody.map(((data, i) => ({
-              ...data,
-              ...UNTreatyBodyData[i]
-            })));
-
+              d.UNTreatyBody = d.UNTreatyBody.map(((data, i) => {                
+                const c = UNTreatyBodyData.filter(a => a.committee === data.Committee);                
+                return ({
+                  ...data,
+                  ...c[0]
+                })
+              }));
+              
             // Inserting additional data to the object // Regional HumanRights Mechanism
               d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => ({
               ...data,
