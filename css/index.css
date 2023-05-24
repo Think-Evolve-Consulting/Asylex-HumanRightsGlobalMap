@@ -335,7 +335,19 @@ tr:nth-child(even) {
   display: flex;
   align-items: center;
   gap: 10%;
-  justify-content: end;
+  justify-content: start;
   margin: 0;  
+}
+
+.colorTab {
+  background-color: rgb(19, 19, 19);
+  padding: 5%;
+  width: 210px !important;
+  margin-left: 78px !important;
+}
+
+.colorTab p {
+  font-size: x-small;
+  color: rgba(0, 0, 0, 0.733);
 }
 
