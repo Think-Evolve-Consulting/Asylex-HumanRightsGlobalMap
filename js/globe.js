@@ -65,13 +65,15 @@ fetch("../data/countries_small.geojson")
                   ...data,
                   ...c[0]
                 })
-              }));
-              
-            // Inserting additional data to the object // Regional HumanRights Mechanism
-              d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => ({
-              ...data,
-              ...regionalHumanRightsMechanismData[i]
-            })));
+              }));             
+            
+              d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => {
+                const I = regionalHumanRightsMechanismData.filter(a => a.institution === data.Institution);
+                return ({
+                  ...data,
+                  ...I[0]
+                })
+              }));            
 
 
         //////////////// without additional data code start
