@@ -307,3 +307,35 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+
+/* color property css*/
+
+.box {
+  height: 12px;
+  width: 12px;
+}
+.box--noRHRM {
+  background-color: #fff;
+}
+.box--threePlus {
+  background-color: #660000;
+}
+.box--sixPlus {
+  background-color: #ff7519;
+}
+.box--eightPlus {
+  background-color: #3083ff;
+}
+.box--other {
+  background-color: #003d99;
+}
+
+.colorboxes {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  justify-content: end;
+  margin: 0;  
+}
+
