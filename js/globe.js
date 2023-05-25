@@ -73,9 +73,9 @@ fetch("../data/countries_small.geojson")
                   ...data,
                   ...I[0]
                 })
-              }));            
+              }));
 
-
+            
         //////////////// without additional data code start
         // let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
         let Inquiry = d?.UNTreatyBody.map((obj) => obj.Inquiry);

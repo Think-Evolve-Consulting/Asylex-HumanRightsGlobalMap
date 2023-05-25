@@ -68,7 +68,7 @@ body {
     padding: 1%;       
     width: 25%;
     display: none;
-    max-height: 50%;
+    max-height: 60%;
     z-index: 1;
   }
   
@@ -203,9 +203,7 @@ body {
     #footer p{
       display: flex;
       justify-content: end;
-    }
-
-    
+    }    
 
    }
 

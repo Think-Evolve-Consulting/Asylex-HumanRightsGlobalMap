@@ -231,28 +231,28 @@ function downloadPdf(button, dynamicValue) {
       const data = [
         ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
         [
-          "",
-          "",
-          "",
+          "Human Rights Council",
+          "Special Procedures",
+          "Working Groups",
           "Working Group on Arbitrary Detention (WGAD)",
         ],
         [
           "Human Rights Council",
-          "",
+          "Special Procedures",
           "Working Groups",
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
         ],
         [
-          "",
+          "Human Rights Council",
           "Special Procedures",
           "Special Rapporteurs",
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
         ],
-        ["", "", "", "Submission to Special Procedures"],
+        ["Human Rights Council", "", "", "Submission to Special Procedures"],
         [
-          "",
-          "",
-          "",
+          "Human Rights Council",
+          "Special Procedures",
+          "Special Rapporteurs",
           "Submitting information to Special Rapporteur",
         ],
         [
@@ -274,10 +274,10 @@ function downloadPdf(button, dynamicValue) {
       doc.autoTable({
         head: [data[0]],
         body: data.slice(1),
-       /*  didDrawCell: function (data) {
+        didDrawCell: function (data) {
           // draw a border around the cell
           doc.rect(data.cell.x, data.cell.y, data.cell.width, data.cell.height);
-        }, */
+        },
         ...options,
       });     
 
