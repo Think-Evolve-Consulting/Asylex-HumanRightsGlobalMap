@@ -229,7 +229,7 @@ function downloadPdf(button, dynamicValue) {
       // define the table data
 
       const data = [
-        ["Institution", "Mechanism", "", "Name and Link Complaint Procedure"],
+        ["Institution", "Mechanism(s)", "Specific Procedures", "Name and Link Complaint Procedure"],
         [
           "Human Rights Council",
           "Special Procedures",
