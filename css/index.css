@@ -21,6 +21,7 @@ body {
     height: 60%;
     overflow-y: scroll;
     font-size: small;
+    z-index: 99;
   }
   
   #popup-hover {
@@ -163,7 +164,44 @@ body {
   #footer a {
     color: #ffffff;
   }
-  
+
+
+  /* laptop view */
+
+  @media only screen and (max-width: 992px){
+
+    #title h1 {
+      font-size: 25px;
+      position: fixed;      
+    };
+
+    #popup-container {
+      width: 35% ;
+      height: 50%;
+    }
+
+    #table {      
+      width: 40%;
+      overflow-y: scroll;
+    }
+
+
+    #footer {
+      font-size: x-small;
+      margin-right: 3%;
+    }
+
+    #footer p{
+      display: flex;
+      justify-content: end;
+    }  
+
+
+
+  }
+
+
+  /* mobile view */
   @media (max-width: 480px) {
     #title h1 {
       font-size: small;
@@ -206,6 +244,8 @@ body {
     }    
 
    }
+
+   
 
 
    /* search bar design */
