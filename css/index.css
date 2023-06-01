@@ -16,9 +16,7 @@ body {
     padding: 1%;
     border: 1px solid #ccc;
     margin: 1%;  
-    background-color: rgb(216, 248, 248);
-    width: 20%;
-    height: 60%;
+    background-color: rgb(216, 248, 248);    
     overflow-y: scroll;
     font-size: small;
     z-index: 99;
@@ -166,17 +164,18 @@ body {
   }
 
 
+
+
   /* laptop view */
 
   @media only screen and (max-width: 992px){
-
     #title h1 {
       font-size: 25px;
       position: fixed;      
     };
 
     #popup-container {
-      width: 35% ;
+      width: 35%;
       height: 50%;
     }
 
@@ -194,11 +193,21 @@ body {
     #footer p{
       display: flex;
       justify-content: end;
-    }  
+    } 
+  }
 
 
+  @media only screen and (min-width: 993px){
+
+    #popup-container {      
+      width: 20%;
+      height: 60%;      
+    }
 
   }
+
+
+
 
 
   /* mobile view */
@@ -214,7 +223,7 @@ body {
       position: fixed;
       top: 3%;
       right: 2%;   
-      width: 80%;
+      width: 70%;
       height: 50%;   
       font-size: x-small;
       padding: 5%;
@@ -229,7 +238,7 @@ body {
     }
   
     #table {
-      bottom: 15%;
+      bottom: 5%;
       width: 90%;
     }
   
@@ -244,6 +253,9 @@ body {
     }    
 
    }
+
+
+    
 
    
 
