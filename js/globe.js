@@ -23,8 +23,6 @@ fetch("../data/countries_small.geojson")
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
 
-        // console.log(d)
-
         if (d.UNTreatyBody.length === 0 && d.regionalHumanRightsMechanism.length === 0) {
           showPopup(`
                   <div class="top-part content">
@@ -36,23 +34,20 @@ fetch("../data/countries_small.geojson")
           return;
         }
 
-        
-
         /// matching the data start point // for additional data
         fetch("../data/UNTrendyBodyAndRegionalOnes.json")
           .then((res) => res.json())
           .then((committeesDetails) => {
 
             let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
-            let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
+            let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);            
             
             let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(
               function (item) {
                 return (committees.indexOf(item?.committee) !== -1) ; 
               }
-            );           
+            );
 
-            
             let regionalHumanRightsMechanismData =
               committeesDetails?.regionalOnes?.filter(function (item) {
                 return institutions.indexOf(item?.institution) !== -1;
@@ -60,7 +55,7 @@ fetch("../data/countries_small.geojson")
             
             // Inserting additional data to the object // UNTreatyBody
               d.UNTreatyBody = d.UNTreatyBody.map(((data, i) => {                
-                const c = UNTreatyBodyData.filter(a => a.committee === data.Committee);                
+                const c = UNTreatyBodyData.filter(a => a.committee === data.Committee);                              
                 return ({
                   ...data,
                   ...c[0]
@@ -74,6 +69,9 @@ fetch("../data/countries_small.geojson")
                   ...I[0]
                 })
               }));
+
+
+              console.log(d.regionalHumanRightsMechanism);
 
             
         //////////////// without additional data code start
@@ -252,7 +250,7 @@ fetch("../data/countries_small.geojson")
           }); */
       ///////////////////// Previous code end ///////////////////////
       })
-
+      .polygonLabel(({ properties: d }) => `<b>${d.BRK_NAME} </b>`)
       .onPolygonHover((hoverD) =>
         world
           .polygonAltitude((d) => (d === hoverD ? 0.12 : 0.06))
