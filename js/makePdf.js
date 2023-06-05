@@ -7,7 +7,7 @@ function downloadPdf(button, dynamicValue) {
   var doc = new jsPDF();
   const country = dynamicValue.split("_")[0];  
 
-  fetch("../data/countries_small.geojson")
+  fetch("../data/Countries_small_updated_June2023.geojson")
     .then((res) => res.json())
     .then((mapData) => {
       let d = mapData?.features.filter(
@@ -322,7 +322,7 @@ function downloadPdf(button, dynamicValue) {
               Institution: "ECOSOC",
               Mechanisms: "Commission on the Status of Women",
               SpecificProcedures: "",
-              LinkComplaint: "Link",
+              LinkComplaint: "",
               link: "https://www.unwomen.org/en/csw/communications-procedure"
             },
           ];
