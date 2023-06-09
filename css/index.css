@@ -69,6 +69,7 @@ body {
     display: none;
     max-height: 60%;
     z-index: 1;
+    overflow-y: scroll;
   }
   
   #tableBtn {
@@ -132,7 +133,7 @@ body {
   }
   
   ::-webkit-scrollbar-track {
-    background-color: #fff;
+    background-color: #ffffff00;
     -webkit-border-radius: 0.625rem;
     border-radius: 0.625rem;
   }
@@ -168,7 +169,7 @@ body {
 
   /* laptop view */
 
-  @media only screen and (max-width: 992px){
+  @media only screen and (max-width: 1199px){
     #title h1 {
       font-size: 25px;
       position: fixed;      
@@ -197,7 +198,7 @@ body {
   }
 
 
-  @media only screen and (min-width: 993px){
+  @media only screen and (min-width: 1199px){
 
     #popup-container {      
       width: 20%;
@@ -205,10 +206,6 @@ body {
     }
 
   }
-
-
-
-
 
   /* mobile view */
   @media (max-width: 480px) {

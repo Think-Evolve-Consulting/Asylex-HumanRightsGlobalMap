@@ -329,8 +329,8 @@ function downloadPdf(button, dynamicValue) {
 
           // Make
 
-          const headers =  ["Institution", "Mechanism(s)", "Specific Procedures", "Specific Procedures", "Links"];
-          const keys = ["Institution","Mechanisms","SpecificProcedures","LinkComplaint", "link"];
+          const headers =  ["Institution", "Mechanism(s)", "Specific Procedures", "Specific Procedures"];
+          const keys = ["Institution","Mechanisms","SpecificProcedures", "link"];
 
             // Set initial y position for table
             let yPos = 30;
@@ -370,8 +370,9 @@ function downloadPdf(button, dynamicValue) {
                   doc.text(xPos + colIndex * colWidth, yPos, lines, { lineHeight: 10 }); // Print the wrapped text
                 } else if (key === "link") {
                     const value = row[key];                 
+                    const name = row['LinkComplaint'];                 
                     doc.setTextColor("#3083ff");
-                    doc.textWithLink("Link", xPos + colIndex * colWidth, yPos, {
+                    doc.textWithLink(name.toString(), xPos + colIndex * colWidth, yPos, {
                       url: value.toString(),
                     });
                   
