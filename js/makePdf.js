@@ -288,6 +288,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Working Groups",
               LinkComplaint: "Working Group on Arbitrary Detention (WGAD)",
+              abbreviations: "WGAD",
               link:"https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
             },
             {
@@ -295,6 +296,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Working Groups",
               LinkComplaint: "Working Group on Enforced or Involuntary Disappearances (WGEID)",
+              abbreviations: "WGEID",
               link:"https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
             },
             {
@@ -302,6 +304,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Special Rapporteurs",
               LinkComplaint: "Submission to Special Procedures",
+              abbreviations: "Submission to Special Procedures",
               link:"https://spsubmission.ohchr.org/"
             },            
             {
@@ -309,6 +312,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Special Rapporteurs",
               LinkComplaint: "Submitting information to Special Rapporteur",
+              abbreviations: "Submitting information to Special Rapporteur",
               link: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM"
             },
             {
@@ -316,6 +320,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Human Rights Council Complaint Procedure",
               SpecificProcedures: "Human Rights Council",
               LinkComplaint: "HRC Complaint Procedure (frequently asked questions)",
+              abbreviations: "FAQ",
               link: "https://www.ohchr.org/en/hr-bodies/hrc/complaint-procedure/hrc-complaint-procedure-index"
             },
             {
@@ -323,6 +328,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Commission on the Status of Women",
               SpecificProcedures: "",
               LinkComplaint: "",
+              abbreviations: "Commission on the Status of Women",
               link: "https://www.unwomen.org/en/csw/communications-procedure"
             },
           ];
@@ -370,7 +376,8 @@ function downloadPdf(button, dynamicValue) {
                   doc.text(xPos + colIndex * colWidth, yPos, lines, { lineHeight: 10 }); // Print the wrapped text
                 } else if (key === "link") {
                     const value = row[key];                 
-                    const name = row['LinkComplaint'];                 
+                    const name = row['abbreviations'];
+                    console.log(name)
                     doc.setTextColor("#3083ff");
                     doc.textWithLink(name.toString(), xPos + colIndex * colWidth, yPos, {
                       url: value.toString(),

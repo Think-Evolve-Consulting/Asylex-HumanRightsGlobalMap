@@ -375,16 +375,16 @@ tr:nth-child(even) {
   background-color: #fff;
 }
 .box--threePlus {
-  background-color: #660000;
+  background-color: #1CA3DE;
 }
 .box--sixPlus {
-  background-color: #ff7519;
+  background-color: #0D85D8;
 }
 .box--eightPlus {
-  background-color: #3083ff;
+  background-color: #0160C9;
 }
 .box--other {
-  background-color: #003d99;
+  background-color: #0041C7;
 }
 
 .colorboxes {

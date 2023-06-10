@@ -69,10 +69,6 @@ fetch("../data/Countries_small_updated_June2023.geojson")
                   ...I[0]
                 })
               }));
-
-
-              console.log(d.regionalHumanRightsMechanism);
-
             
         //////////////// without additional data code start
         // let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
