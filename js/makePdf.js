@@ -2,10 +2,66 @@
 const downLoadPdf = document.getElementById("downloadPdf");
 window.jsPDF = window.jspdf.jsPDF;
 
+// checkicon
+const okIcon = "../data/okImg.png";
+
 function downloadPdf(button, dynamicValue) {
   const { jsPDF } = window.jspdf;
   var doc = new jsPDF();
-  const country = dynamicValue.split("_")[0];  
+  const country = dynamicValue.split("_")[0];
+
+  const styles = {
+    fillColor: "#fff",
+    textColor: "#000",
+    lineWidth: 0.1,
+    lineColor: "#000",
+  };
+
+  const addLinkWithImgHandler = (link, data) => {
+    data.cell.text = "";
+    data.cell.raw = "";
+    let textPos = data.cell;
+    doc.setTextColor("#3083ff");
+    doc.textWithLink(
+      "  ",
+      textPos.x + 4,
+      textPos.y + 3,
+      {
+        url: link,
+      },
+      1,
+      1
+    );
+    doc.addImage(okIcon, "png", textPos.x + 3, textPos.y + 2, 3, 3);
+  };
+
+  const addLinkWithoutIconHandler = (link, data, label) => {
+    data.cell.text = "";
+    data.cell.raw = "";
+    let textPos = data.cell;
+    doc.setTextColor("#3083ff");
+    doc.textWithLink(`${label}`, textPos.x + 4, textPos.y + 7, {
+      url: link,
+      maxWidth: 55,
+    });
+  };
+
+  const headerOfTable = () => {
+    // add text to the PDF document
+    doc.setTextColor("#000");
+    doc.setFontSize(16);
+    doc.setFont("helvetica");
+    doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
+    doc.text(`For`, 105, 18, null, null, "center");
+    const imageURL = "../data/AsyLexGlobalLogo.jpg";
+    doc.addImage(imageURL, "PNG", 165, 5, 40, 40);
+
+    // Country Name
+    doc.setTextColor("#3083ff");
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(18);
+    doc.text(`${country}`, 105, 26, null, null, "center");
+  };
 
   fetch("../data/Countries_small_updated_June2023.geojson")
     .then((res) => res.json())
@@ -43,31 +99,56 @@ function downloadPdf(button, dynamicValue) {
             };
           });
 
-          d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => {
-            const I = regionalHumanRightsMechanismData.filter(a => a.institution === data.Institution);
-            return ({
-              ...data,
-              ...I[0]
-            })
-          }));
+          d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(
+            (data, i) => {
+              const I = regionalHumanRightsMechanismData.filter(
+                (a) => a.institution === data.Institution
+              );
+              return {
+                ...data,
+                ...I[0],
+              };
+            }
+          );
 
-          // add text to the PDF document
-          doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
-          doc.text(`For`, 105, 18, null, null, "center");
-          const imageURL = "../data/AsyLexGlobalLogo.jpg";
-          doc.addImage(imageURL, "PNG", 165, 5, 40, 40);
-
-          // Country Name
-          doc.setTextColor("#3083ff");
-          doc.setFont("helvetica", "bold");
-          doc.setFontSize(18);
-          doc.text(`${country}`, 105, 26, null, null, "center");
+          headerOfTable();
 
           // UN Treaty Body title
           doc.setFontSize(16);
           doc.setTextColor("#000000");
           doc.setFont("helvetica", "bold");
           doc.text("UN Treaty Body: ", 10, 40);
+
+          // page 1
+          const headers1 = [
+            "Committee",
+            "Individual Complaint",
+            "Inquiry",
+            "Relevant Reservations",
+          ];
+          const body1 = [];
+          const indComplaint1 = [];
+          const inquiryArr = [];
+          const relevantRes = [];
+
+          // page 2
+          const headers2 = ["Institution", "Individual Complaint"];
+          const body2 = [];
+          const indComplaint2 = [];
+          const indComplaintLinks = [];
+
+          // page 3
+          const headers3 = [
+            "Institution",
+            "Mechanism(s)",
+            "Specific Procedures",
+            "Specific Procedures",
+          ];
+          const body3 = [];
+          const mechanismsArr = [];
+          const SpecificProcArr = [];
+          const SpecificProcLinkLabelArr = [];
+          const SpecificProcLinksArr = [];
 
           if (UNTreatyBodyData?.length === 0) {
             // doc.setFontSize(12);
@@ -90,9 +171,12 @@ function downloadPdf(button, dynamicValue) {
               doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
             }
           } else {
-            // Define column headers and keys for data extraction
-            const headers = ["Committee","Individual Complaint","Inquiry","Relevant Reservations",];
-            const keys = ["abbreviations","IndividualComplaint","Inquiry","RelevantReservations",];
+            const keys = [
+              "abbreviations",
+              "IndividualComplaint",
+              "Inquiry",
+              "RelevantReservations",
+            ];
 
             // Set initial y position for table
             let yPos = 50;
@@ -101,86 +185,103 @@ function downloadPdf(button, dynamicValue) {
             doc.setFont("times", "bold");
 
             // Loop through data and add rows to the table
-            d.UNTreatyBody.forEach((row, index) => {
-              const xPos = 10;
+            d.UNTreatyBody.forEach((row) => {
               let maxCellHeight = 40; // Maximum height for a cell
               let cellHeight = 10; // Default cell height
-
-              // Add headers to the first row
-              if (index === 0) {
-                headers.forEach((header, colIndex) => {
-                  doc.text(xPos + colIndex * 50, yPos, header);
-                });
-                yPos += cellHeight;
-              }
 
               doc.setFontSize(12);
               doc.setFont("times", "normal");
 
               // Add data rows
-              keys.forEach((key, colIndex) => {
+              keys.forEach((key) => {
                 let colWidth = 50;
                 if (key === "abbreviations") {
                   doc.setTextColor("#000");
                   const value = row[key];
                   const maxWidth = colWidth; // Maximum width for the cell
-                  const lines = doc.splitTextToSize( value?.toString(), maxWidth );
+                  const lines = doc.splitTextToSize(
+                    value?.toString(),
+                    maxWidth
+                  );
+
+                  body1.push([lines.join(" ")]);
 
                   cellHeight = lines.length * 10; // Adjust cell height based on number of lines
                   if (cellHeight > maxCellHeight) cellHeight = maxCellHeight; // Limit cell height
-
-                  doc.text(xPos + colIndex * colWidth, yPos, lines, {
-                    lineHeight: 10,
-                  }); // Print the wrapped text
                 } else if (key === "IndividualComplaint") {
                   const value = row[key];
                   if (value === "Yes") {
-                    doc.setTextColor("#3083ff");
-                    doc.textWithLink("Yes", xPos + colIndex * colWidth, yPos, {
-                      url: "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-                    });
+                    indComplaint1.push("");
                   } else {
-                    doc.text(xPos + colIndex * colWidth, yPos, "-");
+                    indComplaint1.push("-");
                   }
                 } else if (key === "Inquiry") {
                   const value = row[key];
                   if (value === "Yes") {
-                    doc.setTextColor("#3083ff");
-                    doc.textWithLink("Yes", xPos + colIndex * colWidth, yPos, {
-                      url: "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
-                    });
+                    inquiryArr.push("");
                   } else {
-                    doc.text(xPos + colIndex * colWidth, yPos, "-");
+                    inquiryArr.push("-");
                   }
                 } else {
                   const value = row[key];
-                  if (value !== undefined) { 
-                    doc.text(xPos + colIndex * colWidth, yPos, value.toString());
+                  if (value !== undefined) {
+                    relevantRes.push(value.toString());
                   }
                 }
               });
 
-              yPos += cellHeight; // Adjust yPos based on cell height
-
+              yPos += cellHeight;
             });
 
+            body1.forEach((item, index) => {
+              item.push([indComplaint1[index]]);
+              item.push([inquiryArr[index]]);
+              item.push([relevantRes[index]]);
+            });
+
+            doc.autoTable({
+              head: [headers1],
+              body: body1,
+              startY: 50,
+              startX: 10,
+              margin: { top: 10, left: 10 },
+              tableWidth: 190,
+              styles: styles,
+              didParseCell: function (data) {
+                data.cell.styles.cellPadding = 3;
+              },
+              didDrawCell: function (data) {
+                if (data.cell.section === "body" && data.cell.text[0] === "") {
+                  if (data.column.index === 1) {
+                    let link =
+                      "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies";
+                    addLinkWithImgHandler(link, data);
+                  } else if (data.column.index === 2) {
+                    let link =
+                      "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries";
+                    addLinkWithImgHandler(link, data);
+                  }
+                }
+              },
+            });
             // End
           }
+
+          // add another page
+          doc.addPage();
+
+          headerOfTable();
 
           if (UNTreatyBodyData?.length === 0) {
             doc.setFontSize(16);
             doc.setTextColor("#000000");
             doc.setFont("helvetica", "bold");
-            doc.text("Regional Human Rights Mechanism: ", 10, 80);
+            doc.text("Regional Human Rights Mechanism: ", 10, 20);
           } else {
             doc.setFontSize(16);
             doc.setTextColor("#000000");
             doc.setFont("helvetica", "bold");
-            doc.text(
-              "Regional Human Rights Mechanism: ",
-              10,
-              80 + (UNTreatyBodyData.length - 1) * 30
-            );
+            doc.text("Regional Human Rights Mechanism: ", 10, 40);
           }
 
           if (
@@ -198,43 +299,23 @@ function downloadPdf(button, dynamicValue) {
             // split the description text into an array of strings that fit within the width of the document
             var splitTextRHRM = doc.splitTextToSize(descriptionTextRHRM, 250);
 
-            // add the split text to the PDF document
-
-            if (UNTreatyBodyData?.length === 0) {
-              doc.setFontSize(fontSize);
-              for (var i = 0; i < splitTextRHRM.length; i++) {
-                doc.text(splitTextRHRM[i], 10, 90 + i * fontSize * lineHeight);
-              }
-            } else {
-              doc.setFontSize(fontSize);
-              for (var i = 0; i < splitTextRHRM.length; i++) {
-                doc.text(splitTextRHRM[i],10,90 + (UNTreatyBodyData.length - 1) * 30 + i * fontSize * lineHeight);
-              }
+            doc.setFontSize(fontSize);
+            for (var i = 0; i < splitTextRHRM.length; i++) {
+              doc.text(splitTextRHRM[i], 10, 50 + i * fontSize * lineHeight);
             }
           } else {
-
-            const headers = ["Institution","Individual Complaint"];
-            const keys = ["abbreviations","individualComplaint"];
+            const keys = ["abbreviations", "individualComplaint"];
 
             // Set initial y position for table
-            let yPos = 90 + (UNTreatyBodyData.length - 1) * 30;
-            
+            let yPos = 30;
+
             doc.setFontSize(13);
             doc.setFont("times", "bold");
 
             // Loop through data and add rows to the table
-            d.regionalHumanRightsMechanism.forEach((row, index) => {
+            d.regionalHumanRightsMechanism.forEach((row) => {
               const xPos = 10;
-              let maxCellHeight = 40; // Maximum height for a cell
               let cellHeight = 10; // Default cell height
-
-              // Add headers to the first row
-              if (index === 0) {
-                headers.forEach((header, colIndex) => {
-                  doc.text(xPos + colIndex * 140, yPos, header);
-                });
-                yPos += cellHeight;
-              }
 
               doc.setFontSize(12);
               doc.setFont("times", "normal");
@@ -243,26 +324,21 @@ function downloadPdf(button, dynamicValue) {
               keys.forEach((key, colIndex) => {
                 let colWidth = 140;
                 if (key === "abbreviations") {
-                  doc.setTextColor("#000");
                   const value = row[key];
-                  const maxWidth = colWidth; // Maximum width for the cell
-                  const lines = doc.splitTextToSize( value?.toString(), maxWidth );
-
-                  cellHeight = lines.length * 10; // Adjust cell height based on number of lines
-                  if (cellHeight > maxCellHeight) cellHeight = maxCellHeight; // Limit cell height
-
-                  doc.text(xPos + colIndex * colWidth, yPos, lines, { lineHeight: 10 }); // Print the wrapped text
+                  const lines = doc.splitTextToSize(value?.toString());
+                  body2.push([lines.join(" ")]);
                 } else if (key === "individualComplaint") {
-                    const value = row[key];                 
-                    doc.setTextColor("#3083ff");
-                    doc.textWithLink("Yes", xPos + colIndex * colWidth, yPos, {
-                      url: value.toString(),
-                    });
-                  
+                  const value = row[key];
+                  indComplaint2.push("");
+                  indComplaintLinks.push(value);
                 } else {
                   const value = row[key];
                   if (value !== undefined) {
-                    doc.text(xPos + colIndex * colWidth, yPos , value.toString());
+                    doc.text(
+                      xPos + colIndex * colWidth,
+                      yPos,
+                      value.toString()
+                    );
                   }
                 }
               });
@@ -270,34 +346,65 @@ function downloadPdf(button, dynamicValue) {
               yPos += cellHeight; // Adjust yPos based on cell height
             });
 
+            body2.forEach((item, index) => {
+              item.push([indComplaint2[index]]);
+            });
+
+            doc.autoTable({
+              head: [headers2],
+              body: body2,
+              startY: 50,
+              startX: 10,
+              margin: { top: 10, left: 10 },
+              tableWidth: 190,
+              styles: styles,
+              didParseCell: function (data) {
+                data.cell.styles.cellPadding = 3;
+              },
+              didDrawCell: function (data) {
+                if (data.cell.section === "body" && data.cell.text[0] === "") {
+                  if (data.column.index === 1) {
+                    addLinkWithImgHandler(
+                      indComplaintLinks[data.row.index],
+                      data
+                    );
+                  }
+                }
+              },
+            });
+            // End
           }
 
           // create a new page // 2nd page
           doc.addPage();
 
+          // add text to the PDF document
+          headerOfTable();
+
           // add some content to the second page
           doc.setFontSize(18);
           doc.setFont("helvetica", "bold");
           doc.setTextColor("#000000");
-          doc.text("HR Mechanisms in All States",105,20,null,null,"center");
+          doc.text("Human Rights Mechanisms in All States", 10, 40, null, null);
 
           // define the table data
-          const hrMechanismsTableData = [            
+          const hrMechanismsTableData = [
             {
               Institution: "Human Rights Council",
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Working Groups",
               LinkComplaint: "Working Group on Arbitrary Detention (WGAD)",
               abbreviations: "WGAD",
-              link:"https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
+              link: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
             },
             {
               Institution: "Human Rights Council",
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Working Groups",
-              LinkComplaint: "Working Group on Enforced or Involuntary Disappearances (WGEID)",
+              LinkComplaint:
+                "Working Group on Enforced or Involuntary Disappearances (WGEID)",
               abbreviations: "WGEID",
-              link:"https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
+              link: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
             },
             {
               Institution: "Human Rights Council",
@@ -305,23 +412,24 @@ function downloadPdf(button, dynamicValue) {
               SpecificProcedures: "Special Rapporteurs",
               LinkComplaint: "Submission to Special Procedures",
               abbreviations: "Submission to Special Procedures",
-              link:"https://spsubmission.ohchr.org/"
-            },            
+              link: "https://spsubmission.ohchr.org/",
+            },
             {
               Institution: "Human Rights Council",
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Special Rapporteurs",
               LinkComplaint: "Submitting information to Special Rapporteur",
               abbreviations: "Submitting information to Special Rapporteur",
-              link: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM"
+              link: "https://spinternet.ohchr.org/ViewAllCountryMandates.aspx?Type=TM",
             },
             {
               Institution: "Human Rights Council",
               Mechanisms: "Human Rights Council Complaint Procedure",
               SpecificProcedures: "Human Rights Council",
-              LinkComplaint: "HRC Complaint Procedure (frequently asked questions)",
+              LinkComplaint:
+                "HRC Complaint Procedure (frequently asked questions)",
               abbreviations: "FAQ",
-              link: "https://www.ohchr.org/en/hr-bodies/hrc/complaint-procedure/hrc-complaint-procedure-index"
+              link: "https://www.ohchr.org/en/hr-bodies/hrc/complaint-procedure/hrc-complaint-procedure-index",
             },
             {
               Institution: "ECOSOC",
@@ -329,73 +437,100 @@ function downloadPdf(button, dynamicValue) {
               SpecificProcedures: "",
               LinkComplaint: "",
               abbreviations: "Commission on the Status of Women",
-              link: "https://www.unwomen.org/en/csw/communications-procedure"
+              link: "https://www.unwomen.org/en/csw/communications-procedure",
             },
           ];
 
           // Make
+          const keys = [
+            "Institution",
+            "Mechanisms",
+            "SpecificProcedures",
+            "link",
+          ];
 
-          const headers =  ["Institution", "Mechanism(s)", "Specific Procedures", "Specific Procedures"];
-          const keys = ["Institution","Mechanisms","SpecificProcedures", "link"];
+          // Set initial y position for table
+          let yPos = 30;
 
-            // Set initial y position for table
-            let yPos = 30;
-            
-            doc.setFontSize(11);
-            doc.setFont("times", "bold");
+          doc.setFontSize(11);
+          doc.setFont("times", "bold");
 
-            // Loop through data and add rows to the table
-            hrMechanismsTableData.forEach((row, index) => {
-              const xPos = 10;
-              let maxCellHeight = 40; // Maximum height for a cell
-              let cellHeight = 10; // Default cell height
+          // Loop through data and add rows to the table
+          hrMechanismsTableData.forEach((row, index) => {
+            let cellHeight = 10; // Default cell height
 
-              // Add headers to the first row
-              if (index === 0) {
-                headers.forEach((header, colIndex) => {
-                  doc.text(xPos + colIndex * 40, yPos, header);
-                });
-                yPos += cellHeight;
+            // Add data rows
+            keys.forEach((key) => {
+              if (key === "Institution") {
+                const value = row["Institution"];
+                body3.push([value]);
+              } else if (key === "LinkComplaint" || key === "Mechanisms") {
+                doc.setTextColor("#000");
+                const value = row[key];
+                const lines = doc.splitTextToSize(value?.toString());
+                mechanismsArr.push([lines.join(" ")]);
+              } else if (key === "SpecificProcedures") {
+                const value = row["SpecificProcedures"];
+                SpecificProcArr.push([value]);
+              } else if (key === "link") {
+                const value = row[key];
+                const name = row["abbreviations"];
+                SpecificProcLinkLabelArr.push(name);
+                SpecificProcLinksArr.push(value);
               }
-
-              doc.setFontSize(11);
-              doc.setFont("times", "normal");
-
-              // Add data rows
-              keys.forEach((key, colIndex) => {
-                let colWidth = 40;
-                if (key === "LinkComplaint" || key === "Mechanisms") {
-                  doc.setTextColor("#000");
-                  const value = row[key];
-                  const maxWidth = colWidth; // Maximum width for the cell
-                  const lines = doc.splitTextToSize( value?.toString(), maxWidth );
-
-                  cellHeight = lines.length * 10; // Adjust cell height based on number of lines
-                  if (cellHeight > maxCellHeight) cellHeight = maxCellHeight; // Limit cell height
-
-                  doc.text(xPos + colIndex * colWidth, yPos, lines, { lineHeight: 10 }); // Print the wrapped text
-                } else if (key === "link") {
-                    const value = row[key];                 
-                    const name = row['abbreviations'];
-                    console.log(name)
-                    doc.setTextColor("#3083ff");
-                    doc.textWithLink(name.toString(), xPos + colIndex * colWidth, yPos, {
-                      url: value.toString(),
-                    });
-                  
-                } else {
-                  const value = row[key];
-                  if (value !== undefined) {
-                    doc.setTextColor("#000");
-                    doc.text(xPos + colIndex * colWidth, yPos , value.toString());
-                  }
-                }
-              });
-
-              yPos += cellHeight; // Adjust yPos based on cell height
             });
 
-          
+            yPos += cellHeight; // Adjust yPos based on cell height
+          });
+
+          body3.forEach((item, index) => {
+            item.push([mechanismsArr[index]]);
+            item.push([SpecificProcArr[index]]);
+          });
+
+          doc.autoTable({
+            head: [headers3],
+            body: body3,
+            startY: 50,
+            startX: 10,
+            margin: { top: 10, left: 10 },
+            tableWidth: 190,
+            styles: styles,
+            didParseCell: function (data) {
+              data.cell.styles.cellPadding = 3;
+              if (data.cell.section === "body" && data.cell.text[0] === "") {
+                if (data.column.index === 3) {
+                  data.table.columns[3].minWidth = 60;
+                }
+              }
+              if (data.cell.section === "body") {
+                if (data.column.index === 0 && data.row.index === 0) {
+                  data.cell.rowSpan = 5;
+                }
+                if (data.column.index === 1 && data.row.index === 0) {
+                  data.cell.rowSpan = 4;
+                }
+                if (data.column.index === 2 && data.row.index === 0) {
+                  data.cell.rowSpan = 2;
+                }
+                if (data.column.index === 2 && data.row.index === 2) {
+                  data.cell.rowSpan = 2;
+                }
+              }
+            },
+            didDrawCell: function (data) {
+              if (data.cell.section === "body" && data.cell.text[0] === "") {
+                if (data.column.index === 3) {
+                  addLinkWithoutIconHandler(
+                    SpecificProcLinksArr[data.row.index],
+                    data,
+                    SpecificProcLinkLabelArr[data.row.index]
+                  );
+                }
+              }
+            },
+          });
+
           doc.save(`Human Rights Mechanisms_${country}.pdf`);
         });
 

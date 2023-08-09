@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script src="//unpkg.com/d3"></script>
     <script src="//unpkg.com/globe.gl"></script>
     <script
@@ -33,7 +33,6 @@
       href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
       rel="stylesheet"
     />
-   
 
     <!-- deckgl -->
     <script src="https://unpkg.com/@deck.gl/core/dist.min.js"></script>
@@ -50,7 +49,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
     <link rel="stylesheet" href="./css/index.css" />
     <title>Human Rights Mechanisms</title>
-    
   </head>
   <body>
     <div id="globeViz"></div>
@@ -86,7 +84,7 @@
           </td>
 
           <td>
-            <p>Working Groups</p>            
+            <p>Working Groups</p>
           </td>
 
           <td>
@@ -97,7 +95,7 @@
                 href="https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals"
                 >Link</a
               >
-            </p>            
+            </p>
           </td>
         </tr>
         <tr>
@@ -107,7 +105,7 @@
           </td>
 
           <td>
-            <p>Working Groups</p>            
+            <p>Working Groups</p>
           </td>
 
           <td>
@@ -118,25 +116,25 @@
                 href="https://www.ohchr.org/en/special-procedures/wg-disappearances/reporting-disappearance-working-group"
                 >Link</a
               >
-            </p>            
+            </p>
           </td>
         </tr>
-        
+
         <tr>
           <td>Human Rights Council</td>
           <td>
             <p>Special Procedures</p>
           </td>
 
-          <td>            
+          <td>
             <p>Special Rapporteurs</p>
           </td>
 
-          <td>           
+          <td>
             <p>
               Submission to Special Procedures >
               <a target="_blank" href="https://spsubmission.ohchr.org/">Link</a>
-            </p>          
+            </p>
           </td>
         </tr>
         <tr>
@@ -145,11 +143,11 @@
             <p>Special Procedures</p>
           </td>
 
-          <td>            
+          <td>
             <p>Special Rapporteurs</p>
           </td>
 
-          <td>           
+          <td>
             <p>
               Submitting information to Special Rapporteur >
               <a
@@ -160,7 +158,6 @@
             </p>
           </td>
         </tr>
-        
 
         <tr>
           <td>Human Rights Council</td>
@@ -214,13 +211,10 @@
           Search
         </button>
       </div> -->
-
     </div>
 
     <div id="footer">
-
       <div class="colorTab">
-
         <div class="colorboxes">
           <div class="box box--other"></div>
           <p>8+ Human Rights Mechanisms</p>
@@ -228,7 +222,7 @@
 
         <div class="colorboxes">
           <div class="box box--eightPlus"></div>
-          <p>6-8 Human Rights  Mechanisms</p>
+          <p>6-8 Human Rights Mechanisms</p>
         </div>
 
         <div class="colorboxes">
@@ -241,14 +235,18 @@
           <p>1-3 Human Rights Mechanisms</p>
         </div>
 
-
         <div class="colorboxes">
           <div class="box box--noRHRM"></div>
           <p>No Human Rights Mechanisms</p>
-        </div>        
+        </div>
+        <button id="btnCloseColorTab">
+          <i class="fa-sharp fa-solid fa-xmark"></i>
+        </button>
       </div>
 
-      <p >
+      <button id="btnColorTab">Color Legend</button>
+
+      <p>
         Created by
         <a href="https://www.thinkevolveconsulting.com"
           >Think Evolve Consultancy LLP</a

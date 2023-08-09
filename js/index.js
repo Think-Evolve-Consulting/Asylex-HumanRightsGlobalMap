@@ -27,4 +27,14 @@ function hidePopupOnClickOutside(event) {
   if (!popup.contains(event.target)) {
     hidePopup();
   }
-};
+}
+
+document.getElementById("btnCloseColorTab").addEventListener("click", () => {
+  document.querySelector(".colorTab").style.display = "none";
+  document.querySelector("#btnColorTab").style.display = "block";
+});
+
+document.getElementById("btnColorTab").addEventListener("click", () => {
+  document.querySelector(".colorTab").style.display = "block";
+  document.querySelector("#btnColorTab").style.display = "none";
+});

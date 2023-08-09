@@ -22,8 +22,10 @@ fetch("../data/Countries_small_updated_June2023.geojson")
       .polygonSideColor(() => "rgba(0, 100, 0, 0.15)") // ground color
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
-
-        if (d.UNTreatyBody.length === 0 && d.regionalHumanRightsMechanism.length === 0) {
+        if (
+          d.UNTreatyBody.length === 0 &&
+          d.regionalHumanRightsMechanism.length === 0
+        ) {
           showPopup(`
                   <div class="top-part content">
                     <h2 style="margin: 0;">${d.BRK_NAME}</h2>
@@ -38,53 +40,62 @@ fetch("../data/Countries_small_updated_June2023.geojson")
         fetch("../data/UNTrendyBodyAndRegionalOnes.json")
           .then((res) => res.json())
           .then((committeesDetails) => {
-
             let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
-            let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);            
-            
+            let institutions = d?.regionalHumanRightsMechanism.map(
+              (obj) => obj.Institution
+            );
+
             let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(
               function (item) {
-                return (committees.indexOf(item?.committee) !== -1) ; 
+                return committees.indexOf(item?.committee) !== -1;
               }
             );
 
             let regionalHumanRightsMechanismData =
               committeesDetails?.regionalOnes?.filter(function (item) {
                 return institutions.indexOf(item?.institution) !== -1;
-              });             
-            
+              });
+
             // Inserting additional data to the object // UNTreatyBody
-              d.UNTreatyBody = d.UNTreatyBody.map(((data, i) => {                
-                const c = UNTreatyBodyData.filter(a => a.committee === data.Committee);                              
-                return ({
+            d.UNTreatyBody = d.UNTreatyBody.map((data, i) => {
+              const c = UNTreatyBodyData.filter(
+                (a) => a.committee === data.Committee
+              );
+              return {
+                ...data,
+                ...c[0],
+              };
+            });
+
+            d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(
+              (data, i) => {
+                const I = regionalHumanRightsMechanismData.filter(
+                  (a) => a.institution === data.Institution
+                );
+                return {
                   ...data,
-                  ...c[0]
-                })
-              }));             
-            
-              d.regionalHumanRightsMechanism = d.regionalHumanRightsMechanism.map(((data, i) => {
-                const I = regionalHumanRightsMechanismData.filter(a => a.institution === data.Institution);
-                return ({
-                  ...data,
-                  ...I[0]
-                })
-              }));
-            
-        //////////////// without additional data code start
-        // let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
-        let Inquiry = d?.UNTreatyBody.map((obj) => obj.Inquiry);
-        let RR = d?.UNTreatyBody.map((obj) => obj.RelevantReservations); // Relevant Reservations
-        let IndividualComplaint = d?.UNTreatyBody.map(
-          (obj) => obj.IndividualComplaint
-        );
-        // let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
-        let IndividualComplaintRHRM = d?.regionalHumanRightsMechanism.map((obj) => obj.IndividualComplaint);
-        // Passing parameter to the download pdf
-        const string = `${d.BRK_NAME}_${committees}_${institutions}_${IndividualComplaint}_${Inquiry}_${RR}_${IndividualComplaintRHRM}`;
-        
-        // Making html popup content
-        let UNTreatyBodyTable = [
-          `<div class="top-part">
+                  ...I[0],
+                };
+              }
+            );
+
+            //////////////// without additional data code start
+            // let committees = d?.UNTreatyBody.map((obj) => obj.Committee);
+            let Inquiry = d?.UNTreatyBody.map((obj) => obj.Inquiry);
+            let RR = d?.UNTreatyBody.map((obj) => obj.RelevantReservations); // Relevant Reservations
+            let IndividualComplaint = d?.UNTreatyBody.map(
+              (obj) => obj.IndividualComplaint
+            );
+            // let institutions = d?.regionalHumanRightsMechanism.map((obj) => obj.Institution);
+            let IndividualComplaintRHRM = d?.regionalHumanRightsMechanism.map(
+              (obj) => obj.IndividualComplaint
+            );
+            // Passing parameter to the download pdf
+            const string = `${d.BRK_NAME}_${committees}_${institutions}_${IndividualComplaint}_${Inquiry}_${RR}_${IndividualComplaintRHRM}`;
+
+            // Making html popup content
+            let UNTreatyBodyTable = [
+              `<div class="top-part">
           <h2 style="margin: 0;">${
             d.BRK_NAME
           } <button id="downloadPdf" onclick="downloadPdf(this, '${string}')" class="downloadBtn"><i class="fa-solid fa-file-arrow-down"></i></button> </h2>
@@ -98,7 +109,7 @@ fetch("../data/Countries_small_updated_June2023.geojson")
             <th>Inquiry</th>
             <th>Relevant Reservations</th>
           </tr>
-          ${d.UNTreatyBody?.map((un) => {           
+          ${d.UNTreatyBody?.map((un) => {
             return `<tr>
               <td>${un?.abbreviations}</td>
               <td>${
@@ -115,9 +126,9 @@ fetch("../data/Countries_small_updated_June2023.geojson")
             </tr>`;
           }).join(" ")}
           </table>`,
-        ];
-        let regionalHumanRightsMechanismTable = [
-          `
+            ];
+            let regionalHumanRightsMechanismTable = [
+              `
         <h4>Regional Human Rights Mechanism:</h4>
         <table>
           <tr>
@@ -128,16 +139,18 @@ fetch("../data/Countries_small_updated_June2023.geojson")
             ?.map((un) => {
               return `<tr>
               <td>${un?.abbreviations}</td>
-              <td>${un?.IndividualComplaint == "Yes"
-              ? `<a target="_blank" href=${un?.individualComplaint}>Yes</a>`
-              : "-"}</td>
+              <td>${
+                un?.IndividualComplaint == "Yes"
+                  ? `<a target="_blank" href=${un?.individualComplaint}>Yes</a>`
+                  : "-"
+              }</td>
             </tr>`;
             })
             .join(" ")}
         </table>`,
-        ];
+            ];
 
-        showPopup(`
+            showPopup(`
           ${
             d?.UNTreatyBody.length === 0
               ? `<h4>UN Treaty Body:</h4><p> In <strong>${d.BRK_NAME}</strong>, no relevant international human rights complaint mechanisms are available for (rejected) asylum seekers. If you still wish to take initiative in the context, please assess the further possibilities applicable to all countries listed below. </p>`
@@ -150,10 +163,10 @@ fetch("../data/Countries_small_updated_June2023.geojson")
               : regionalHumanRightsMechanismTable
           }
           `);
-        ////////////////////// without additional data code end
-      });
+            ////////////////////// without additional data code end
+          });
 
-      ///////////////////// Previous code start ///////////////////////
+        ///////////////////// Previous code start ///////////////////////
 
         /* fetch("../data/UNTrendyBodyAndRegionalOnes.json")
           .then((res) => res.json())
@@ -244,7 +257,7 @@ fetch("../data/Countries_small_updated_June2023.geojson")
                   }
                 </div>`);
           }); */
-      ///////////////////// Previous code end ///////////////////////
+        ///////////////////// Previous code end ///////////////////////
       })
       .polygonLabel(({ properties: d }) => `<b>${d.BRK_NAME} </b>`)
       .onPolygonHover((hoverD) =>
@@ -256,7 +269,6 @@ fetch("../data/Countries_small_updated_June2023.geojson")
       )
       .polygonsTransitionDuration(300)(document.getElementById("globeViz"));
   });
-
 
 // Set country point of view Function
 const searchCountry = () => {

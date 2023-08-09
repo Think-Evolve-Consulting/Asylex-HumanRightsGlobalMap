@@ -8,13 +8,24 @@ function downloadPdf(button, dynamicValue) {
   var doc = new jsPDF();
   const country = dynamicValue.split("_")[0];
   let committees = dynamicValue.split("_")[1];
-  let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
-  let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
-
+  let Inquiry = dynamicValue
+    .split("_")[4]
+    .split(",")
+    .map((item) => item.trim());
+  let relevantReservations = dynamicValue
+    .split("_")[5]
+    .split(",")
+    .map((item) => item.trim());
 
   let institutions = dynamicValue.split("_")[2];
-  let IndividualComplaint = dynamicValue.split("_")[3].split(',').map(item => item.trim());
-  let IndividualComplaintRHRM = dynamicValue.split("_")[6].split(',').map(item => item.trim());
+  let IndividualComplaint = dynamicValue
+    .split("_")[3]
+    .split(",")
+    .map((item) => item.trim());
+  let IndividualComplaintRHRM = dynamicValue
+    .split("_")[6]
+    .split(",")
+    .map((item) => item.trim());
 
   fetch("../data/UNTrendyBodyAndRegionalOnes.json")
     .then((res) => res.json())
@@ -264,32 +275,44 @@ function downloadPdf(button, dynamicValue) {
 }
 
 function downloadPdf(button, dynamicValue) {
-
   const country = dynamicValue.split("_")[0];
 
   let committees = dynamicValue.split("_")[1];
-  let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
-  let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
-
+  let Inquiry = dynamicValue
+    .split("_")[4]
+    .split(",")
+    .map((item) => item.trim());
+  let relevantReservations = dynamicValue
+    .split("_")[5]
+    .split(",")
+    .map((item) => item.trim());
 
   let institutions = dynamicValue.split("_")[2];
-  let IndividualComplaint = dynamicValue.split("_")[3].split(',').map(item => item.trim());
-  let IndividualComplaintRHRM = dynamicValue.split("_")[6].split(',').map(item => item.trim());
-
+  let IndividualComplaint = dynamicValue
+    .split("_")[3]
+    .split(",")
+    .map((item) => item.trim());
+  let IndividualComplaintRHRM = dynamicValue
+    .split("_")[6]
+    .split(",")
+    .map((item) => item.trim());
 
   fetch("../data/UNTrendyBodyAndRegionalOnes.json")
     .then((res) => res.json())
     .then((committeesDetails) => {
-      let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (item) {
+      let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (
+        item
+      ) {
         return committees.indexOf(item?.committee) !== -1;
       });
-      let regionalHumanRightsMechanismData = committeesDetails?.regionalOnes?.filter(function (item) {
+      let regionalHumanRightsMechanismData =
+        committeesDetails?.regionalOnes?.filter(function (item) {
           return institutions.indexOf(item?.institution) !== -1;
         });
-      });
-    
-   // end 
-  
+    });
+
+  // end
+
   const UNTreatyBodyData = [
     {
       committee: "CCPR",
@@ -364,15 +387,18 @@ function downloadPdf(button, dynamicValue) {
       Inquiry: "Yes",
       relevantReservations: "-",
     },
-  ]; 
+  ];
 
-
-  
   // Define table headers
-  const tableHeaders = ["Committee","Individual Complaint","Inquiry","Relevant Reservations"];
+  const tableHeaders = [
+    "Committee",
+    "Individual Complaint",
+    "Inquiry",
+    "Relevant Reservations",
+  ];
 
   // Map the array of objects to the table data structure
-  const mappedData =  UNTreatyBodyData.map(function (item) {
+  const mappedData = UNTreatyBodyData.map(function (item) {
     return [
       item?.abbreviations,
       { text: "Yes", link: item?.individualComplaintLink },
@@ -380,8 +406,6 @@ function downloadPdf(button, dynamicValue) {
       item?.relevantReservations,
     ];
   });
-
-  
 
   // Create the table definition
   const UNTreatyBodyTable = {
@@ -427,7 +451,7 @@ function downloadPdf(button, dynamicValue) {
   };
 
   // Generate the PDF
-  pdfMake.createPdf(docDefinition).download(`Human Rights Mechanisms_${country}.pdf`);
-
-  
+  pdfMake
+    .createPdf(docDefinition)
+    .download(`Human Rights Mechanisms_${country}.pdf`);
 }

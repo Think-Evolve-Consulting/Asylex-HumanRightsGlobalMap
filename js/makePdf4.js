@@ -8,7 +8,7 @@ function downloadPdf(button, dynamicValue) {
   const country = dynamicValue.split("_")[0];
 
   let committees = dynamicValue.split("_")[1];
-  
+
   let Inquiry = dynamicValue
     .split("_")[4]
     .split(",")
@@ -31,20 +31,16 @@ function downloadPdf(button, dynamicValue) {
   fetch("../data/UNTrendyBodyAndRegionalOnes.json")
     .then((res) => res.json())
     .then((committeesDetails) => {
-
       let UNTreatyBodyData = committeesDetails?.UNTrendyBody?.filter(function (
         item
       ) {
         return committees.indexOf(item?.committee) !== -1;
-      });     
-      
+      });
 
       let regionalHumanRightsMechanismData =
         committeesDetails?.regionalOnes?.filter(function (item) {
           return institutions.indexOf(item?.institution) !== -1;
         });
-
-        
 
       // add text to the PDF document
       doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
@@ -85,7 +81,6 @@ function downloadPdf(button, dynamicValue) {
           doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
         }
       } else {
-
         // Pushing the IndividualComplaint to inside the object
         UNTreatyBodyData = UNTreatyBodyData.map((row, index) => ({
           ...row,
@@ -93,7 +88,6 @@ function downloadPdf(button, dynamicValue) {
           Inquiry: Inquiry[index],
           relevantReservations: relevantReservations[index],
         }));
-
 
         /* // Inserting additional data to the object // UNTreatyBody
         UNTreatyBodyData = UNTreatyBodyData.map(((data, i) => {                
@@ -104,9 +98,6 @@ function downloadPdf(button, dynamicValue) {
           })
         }));
   */
-        
-
-
 
         /* // Define column headers and keys for data extraction
         const headers = ["Committee", "Individual Complaint", "Inquiry", "Relevant Reservations"];
@@ -166,8 +157,6 @@ function downloadPdf(button, dynamicValue) {
         doc.setFontSize(12);
         doc.setFont("times", "normal");
 
-        
-
         // Loop through data and add rows to the table
         UNTreatyBodyData.forEach((row, index) => {
           const xPos = 10;
@@ -186,43 +175,40 @@ function downloadPdf(button, dynamicValue) {
               const value = row[key];
               const maxWidth = colWidth; // Maximum width for the cell
               const lineHeight = 10; // Line height for wrapped text
-              const lines = doc.splitTextToSize(value?.toString(), maxWidth);             
+              const lines = doc.splitTextToSize(value?.toString(), maxWidth);
               doc.text(xPos + colIndex * colWidth, yPos, lines); // Print the wrapped text
-
             } else if (key === "IndividualComplaint") {
               const value = row[key];
-              if(value === "Yes"){
+              if (value === "Yes") {
                 doc.textWithLink("Yes", xPos + colIndex * colWidth, yPos, {
                   url: "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
                 });
               } else {
                 doc.text(xPos + colIndex * colWidth, yPos, "-");
               }
-            } else if(key === "Inquiry"){
+            } else if (key === "Inquiry") {
               const value = row[key];
-              if(value === "Yes"){
+              if (value === "Yes") {
                 doc.textWithLink("Yes", xPos + colIndex * colWidth, yPos, {
                   url: "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries",
                 });
               } else {
                 doc.text(xPos + colIndex * colWidth, yPos, "-");
               }
-            }
-            else {
+            } else {
               const value = row[key];
-              if(value === undefined){
-
+              if (value === undefined) {
               } else {
                 doc.text(xPos + colIndex * colWidth, yPos, value.toString());
               }
-              //doc.text(xPos + colIndex * colWidth, yPos, value.toString());              
+              //doc.text(xPos + colIndex * colWidth, yPos, value.toString());
             }
           });
           yPos += 10;
         });
 
         // Define column headers and keys for data extraction
-       /*  const headers = [
+        /*  const headers = [
           "Committee",
           "Individual Complaint",
           "Inquiry",

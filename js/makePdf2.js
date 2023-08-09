@@ -9,13 +9,24 @@ function downloadPdf(button, dynamicValue) {
   const country = dynamicValue.split("_")[0];
 
   let committees = dynamicValue.split("_")[1];
-  let Inquiry = dynamicValue.split("_")[4].split(',').map(item => item.trim());
-  let relevantReservations = dynamicValue.split("_")[5].split(',').map(item => item.trim());
-
+  let Inquiry = dynamicValue
+    .split("_")[4]
+    .split(",")
+    .map((item) => item.trim());
+  let relevantReservations = dynamicValue
+    .split("_")[5]
+    .split(",")
+    .map((item) => item.trim());
 
   let institutions = dynamicValue.split("_")[2];
-  let IndividualComplaint = dynamicValue.split("_")[3].split(',').map(item => item.trim());
-  let IndividualComplaintRHRM = dynamicValue.split("_")[6].split(',').map(item => item.trim());
+  let IndividualComplaint = dynamicValue
+    .split("_")[3]
+    .split(",")
+    .map((item) => item.trim());
+  let IndividualComplaintRHRM = dynamicValue
+    .split("_")[6]
+    .split(",")
+    .map((item) => item.trim());
 
   fetch("../data/UNTrendyBodyAndRegionalOnes.json")
     .then((res) => res.json())
@@ -30,7 +41,6 @@ function downloadPdf(button, dynamicValue) {
           return institutions.indexOf(item?.institution) !== -1;
         });
 
-
       // add text to the PDF document
       doc.text(`Human Rights Mechanisms`, 105, 10, null, null, "center");
       doc.text(`For`, 105, 18, null, null, "center");
@@ -42,7 +52,6 @@ function downloadPdf(button, dynamicValue) {
       doc.setFont("helvetica", "bold");
       doc.setFontSize(18);
       doc.text(`${country}`, 105, 26, null, null, "center");
-
 
       // UN Treaty Body title
       doc.setFontSize(16);
@@ -71,7 +80,6 @@ function downloadPdf(button, dynamicValue) {
           doc.text(splitText[i], 10, 50 + i * fontSize * lineHeight);
         }
       } else {
-
         // Pushing the IndividualComplaint to inside the object
         UNTreatyBodyData = UNTreatyBodyData.map((row, index) => ({
           ...row,
@@ -110,8 +118,6 @@ function downloadPdf(button, dynamicValue) {
           startY: 50,
           startX: 10,
         });
-
-        
       }
 
       if (UNTreatyBodyData?.length === 0) {
@@ -251,12 +257,7 @@ function downloadPdf(button, dynamicValue) {
           "Working Group on Enforced or Involuntary Disappearances (WGEID)",
         ],
         ["", "", "", "Submission to Special Procedures"],
-        [
-          "",
-          "",
-          "",
-          "Submitting information to Special Rapporteur",
-        ],
+        ["", "", "", "Submitting information to Special Rapporteur"],
         [
           "",
           "Human Rights Council Complaint Procedure",
@@ -322,57 +323,53 @@ function downloadPdf(button, dynamicValue) {
 }
 
 function downloadPdf2() {
-
   //  Define your table data
-      var tableData = [
-        ["Link 1", { text: "Link", link: "https://example.com/link1" }],
-        ["Link 2", { text: "Go to Link 2", link: "https://example.com/link2" }],
-        // Add more rows as needed
-      ];
+  var tableData = [
+    ["Link 1", { text: "Link", link: "https://example.com/link1" }],
+    ["Link 2", { text: "Go to Link 2", link: "https://example.com/link2" }],
+    // Add more rows as needed
+  ];
 
-      // Define table headers
-      var tableHeaders = ["Title", "Link"];
+  // Define table headers
+  var tableHeaders = ["Title", "Link"];
 
-      // Create the table definition
-      var table = {
-        headerRows: 1,
-        widths: ['*', '*'],
-        body: [tableHeaders, ...tableData],
-      };
+  // Create the table definition
+  var table = {
+    headerRows: 1,
+    widths: ["*", "*"],
+    body: [tableHeaders, ...tableData],
+  };
 
-      // Define the document definition
-      var docDefinition = {
-        content: [
-          { text: 'Table with Links', style: 'header' },
-          { table: table },
-        ],
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            margin: [0, 0, 0, 10]
-          },
-          link: {
-            color: 'blue',
-            decoration: 'underline'
-          }
-        },
-        defaultStyle: {
-          // Set the default style for links
-          link: true
-        },
-        // Add an event handler for link clicks
-        // This will navigate to the link URL when clicked
-        // Note: This works in the generated PDF, not in the browser preview
-        // Use the downloaded PDF to test the link functionality
-        // It may not work if the link is an external URL due to security restrictions
-        eventHandlers: {
-          'link': function (event, link) {
-            window.open(link, '_blank');
-          }
-        }
-      };
+  // Define the document definition
+  var docDefinition = {
+    content: [{ text: "Table with Links", style: "header" }, { table: table }],
+    styles: {
+      header: {
+        fontSize: 18,
+        bold: true,
+        margin: [0, 0, 0, 10],
+      },
+      link: {
+        color: "blue",
+        decoration: "underline",
+      },
+    },
+    defaultStyle: {
+      // Set the default style for links
+      link: true,
+    },
+    // Add an event handler for link clicks
+    // This will navigate to the link URL when clicked
+    // Note: This works in the generated PDF, not in the browser preview
+    // Use the downloaded PDF to test the link functionality
+    // It may not work if the link is an external URL due to security restrictions
+    eventHandlers: {
+      link: function (event, link) {
+        window.open(link, "_blank");
+      },
+    },
+  };
 
-      // Generate the PDF
-      pdfMake.createPdf(docDefinition).download('table_with_links.pdf'); 
+  // Generate the PDF
+  pdfMake.createPdf(docDefinition).download("table_with_links.pdf");
 }

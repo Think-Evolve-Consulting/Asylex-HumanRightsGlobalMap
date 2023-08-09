@@ -154,7 +154,7 @@ function downloadPdf(button, dynamicValue) {
       doc.setFontSize(18);
       doc.setFont("helvetica", "bold");
       doc.setTextColor("#000000");
-      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");      
+      doc.text("HR Mechanisms in All States", 105, 10, null, null, "center");
 
       // define the table data
 

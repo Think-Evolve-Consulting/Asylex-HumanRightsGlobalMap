@@ -327,5 +327,3 @@ function autocomplete(inp, arr) {
   });
 }
 autocomplete(document.getElementById("myInput"), countries);
-
-
