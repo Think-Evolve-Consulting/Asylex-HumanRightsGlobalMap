@@ -386,6 +386,7 @@ tr:nth-child(even) {
   margin-left: 78px !important;
   z-index: 0;
   position: relative;
+  display: none;
 }
 
 .colorTab p {
@@ -393,32 +394,26 @@ tr:nth-child(even) {
   color: rgba(0, 0, 0, 0.733);
 }
 
-#btnCloseColorTab {
-  display: none;
-}
-
 #btnColorTab {
-  display: none;
+  display: block;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  font-weight: 700;
+  padding: 3px 4px;
+  cursor: pointer;
 }
 
-@media (max-width: 480px) {
-  .colorTab {
-    display: none;
-  }
+#btnCloseColorTab {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
 
+@media (max-width: 1224px) {
   #btnColorTab {
-    display: block;
-    position: fixed;
     bottom: 30px;
-    right: 10px;
-    font-weight: 700;
-    padding: 3px 4px;
-  }
-
-  #btnCloseColorTab {
-    display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
   }
 }

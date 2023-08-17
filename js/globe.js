@@ -114,12 +114,12 @@ fetch("../data/Countries_small_updated_Aug2023.geojson")
               <td>${un?.abbreviations}</td>
               <td>${
                 un?.IndividualComplaint == "Yes"
-                  ? `<a target="_blank" href="https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies">Yes</a>`
+                  ? `<a target="_blank" href="https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies"><img src="./data/okImg.png" alt="ok img" width="15" /></a>`
                   : "-"
               }</td>
               <td>${
                 un?.Inquiry == "Yes"
-                  ? `<a target="_blank" href="https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries">Yes</a>`
+                  ? `<a target="_blank" href="https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"><img src="./data/okImg.png" alt="ok img" width="15" /></a>`
                   : "-"
               }</td>
               <td>${un.RelevantReservations}</td>
@@ -141,7 +141,7 @@ fetch("../data/Countries_small_updated_Aug2023.geojson")
               <td>${un?.abbreviations}</td>
               <td>${
                 un?.IndividualComplaint == "Yes"
-                  ? `<a target="_blank" href=${un?.individualComplaint}>Yes</a>`
+                  ? `<a target="_blank" href=${un?.individualComplaint}><img src="./data/okImg.png" alt="ok img" width="15" /></a>`
                   : "-"
               }</td>
             </tr>`;

@@ -139,9 +139,9 @@ function downloadPdf(button, dynamicValue) {
 
           // page 3
           const headers3 = [
-            "Institution",
+            "Addressed",
             "Mechanism(s)",
-            "Specific Procedures",
+            "Institution",
             "Specific Procedures",
           ];
           const body3 = [];
@@ -394,7 +394,7 @@ function downloadPdf(button, dynamicValue) {
               Mechanisms: "Special Procedures",
               SpecificProcedures: "Working Groups",
               LinkComplaint: "Working Group on Arbitrary Detention (WGAD)",
-              abbreviations: "WGAD",
+              abbreviations: "Working Group on Arbitrary Detention (WGAD)",
               link: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
             },
             {
@@ -403,7 +403,8 @@ function downloadPdf(button, dynamicValue) {
               SpecificProcedures: "Working Groups",
               LinkComplaint:
                 "Working Group on Enforced or Involuntary Disappearances (WGEID)",
-              abbreviations: "WGEID",
+              abbreviations:
+                "Working Group on Enforced or Involuntary Disappearances (WGEID)",
               link: "https://www.ohchr.org/en/special-procedures/wg-arbitrary-detention/complaints-and-urgent-appeals",
             },
             {
@@ -428,7 +429,8 @@ function downloadPdf(button, dynamicValue) {
               SpecificProcedures: "Human Rights Council",
               LinkComplaint:
                 "HRC Complaint Procedure (frequently asked questions)",
-              abbreviations: "FAQ",
+              abbreviations:
+                "HRC Complaint Procedure (frequently asked questions)",
               link: "https://www.ohchr.org/en/hr-bodies/hrc/complaint-procedure/hrc-complaint-procedure-index",
             },
             {
@@ -487,7 +489,6 @@ function downloadPdf(button, dynamicValue) {
             item.push([mechanismsArr[index]]);
             item.push([SpecificProcArr[index]]);
           });
-
           doc.autoTable({
             head: [headers3],
             body: body3,
@@ -498,6 +499,9 @@ function downloadPdf(button, dynamicValue) {
             styles: styles,
             didParseCell: function (data) {
               data.cell.styles.cellPadding = 3;
+              const contentHeight = doc.getTextDimensions(data.cell.text).h;
+              const cellHeight = contentHeight + 18;
+              data.row.height = cellHeight;
               if (data.cell.section === "body" && data.cell.text[0] === "") {
                 if (data.column.index === 3) {
                   data.table.columns[3].minWidth = 60;
