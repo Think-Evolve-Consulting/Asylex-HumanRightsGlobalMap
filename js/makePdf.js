@@ -139,9 +139,9 @@ function downloadPdf(button, dynamicValue) {
 
           // page 3
           const headers3 = [
-            "Addressed",
-            "Mechanism(s)",
             "Institution",
+            "Mechanism(s)",
+            "Institution to be addressed",
             "Specific Procedures",
           ];
           const body3 = [];
