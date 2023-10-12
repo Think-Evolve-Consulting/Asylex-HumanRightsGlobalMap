@@ -12,14 +12,14 @@ fetch("../data/countries_small_updated_Aug2023.geojson")
     world = Globe()
       .globeImageUrl("//unpkg.com/three-globe/example/img/earth-night.jpg")
       .backgroundImageUrl("//unpkg.com/three-globe/example/img/night-sky.png")
-      .lineHoverPrecision(0)
+      .lineHoverPrecision(0.01)
       .labelText(countries?.properties?.BRK_NAME)
       .polygonsData(
         countries.features.filter((d) => d.properties.ISO_A2 !== "AQ")
       )
-      .polygonAltitude(0.06)
+      .polygonAltitude(0.01)
       .polygonCapColor((feat) => feat?.properties?.colour) // polygon color coming from color property
-      .polygonSideColor(() => "rgba(0, 100, 0, 0.15)") // ground color
+      .polygonSideColor(() => "rgba(0, 0, 0, 0.3)") // ground color
       .polygonStrokeColor(() => "#111")
       .onPolygonClick(({ properties: d }) => {
         if (
@@ -262,7 +262,7 @@ fetch("../data/countries_small_updated_Aug2023.geojson")
       .polygonLabel(({ properties: d }) => `<b>${d.BRK_NAME} </b>`)
       .onPolygonHover((hoverD) =>
         world
-          .polygonAltitude((d) => (d === hoverD ? 0.12 : 0.06))
+          .polygonAltitude((d) => (d === hoverD ? 0.06 : 0.01))
           .polygonCapColor((d) => {
             // return d === hoverD ? "white" : d?.properties?.color;
           })
