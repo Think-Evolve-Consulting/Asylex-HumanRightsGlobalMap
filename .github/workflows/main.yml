@@ -1,0 +1,49 @@
+name: Periodic Pipeline
+
+on:
+  schedule:
+    - cron: '0 */1 * * *' # Run every 2 hours
+
+env:
+  GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY}} 
+  SHEET_ID: ${{ secrets.SHEET_ID }}
+
+jobs:
+  generate-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install Dependencies
+        run: |
+          pip install gspread oauth2client numpy pandas geojson datetime
+
+      - name: Run Python Script
+        run: python asylex_automation.py
+
+      - name: Commit Changes to UN Treaty bodies file
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/UNTrendyBodyAndRegionalOnes.json
+          git commit -m "Commited UN Bodies data"
+
+      - name: Commit Changes to Countries geojson
+        run: |
+          git add data/countries_small_updated_Aug2023.geojson
+          git commit -m "Commited countries data"
+
+      - name: Push commits to repo
+        run: |
+          git push origin main
+          echo "INFO: Changes Pushed"
+          
+        env:
+          REPO_ACCESS_TOKEN: ${{ secrets.REPO_ACCESS_TOKEN }}
