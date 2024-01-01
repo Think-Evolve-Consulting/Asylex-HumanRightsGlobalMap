@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-01-01 10:27:46.831480",
+  "datetime": "2024-01-01 10:35:33.270285",
   "features": [
     {
       "type": "Feature",
@@ -379,12 +379,7 @@
             "RelevantReservations": "-"
           }
         ],
-        "regionalHumanRightsMechanism": [
-          {
-            "Institution": "ECtHR",
-            "IndividualComplaint": "Yes"
-          }
-        ],
+        "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
       }
     },
