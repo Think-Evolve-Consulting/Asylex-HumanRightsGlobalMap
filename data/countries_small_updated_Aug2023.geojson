@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-01-01 14:04:02.287837",
+  "datetime": "2024-01-01 15:15:36.270025",
   "features": [
     {
       "type": "Feature",
@@ -379,12 +379,7 @@
             "RelevantReservations": "-"
           }
         ],
-        "regionalHumanRightsMechanism": [
-          {
-            "Institution": "Frontex",
-            "IndividualComplaint": "Yes"
-          }
-        ],
+        "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
       }
     },
