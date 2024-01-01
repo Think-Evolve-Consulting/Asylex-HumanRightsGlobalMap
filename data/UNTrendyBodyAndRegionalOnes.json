@@ -1,103 +1,127 @@
 {
-    "UNTrendyBody": [
-      {
-        "committee": "CCPR",
-        "abbreviations": "Human Rights Committee",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CEDAW",
-        "abbreviations": "Committee on the Elimination of Discrimination against Women",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CAT",
-        "abbreviations": "Committee Against Torture",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CRC",
-        "abbreviations": "Committee on the Rights of the Child",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CED",
-        "abbreviations": "Committee on Enforced Disappearance",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CERD",
-        "abbreviations": "Committee on the Elimination of Racial Discrimination",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CESCR",
-        "abbreviations": "Committee on Economic, Social and Cultural Rights",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      },
-      {
-        "committee": "CRPD",
-        "abbreviations": "Committee on the Rights of Persons with Disabilities",
-        "individualComplaint": "yes",
-        "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
-        "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
-      }
-    ],
-    "regionalOnes": [
-      {
-        "institution": "ACERWC",
-        "abbreviations": "African Committee of Experts on the Rights and Welfare of the Child",
-        "individualComplaint": "https://www.acerwc.africa/en/page/guidelines-consideration-communications-and-monitoring-implementation-decisions"
-      },
-      {
-        "institution": "ECtHR",
-        "abbreviations": "European Court of Human Rights",
-        "individualComplaint": "https://r39.echr.coe.int"
-      },
-      {
-        "institution": "Frontex",
-        "abbreviations": "Frontex",
-        "individualComplaint": "https://microsite.frontex.europa.eu/en/Complaints"
-      },
-      {
-        "institution": "ACHPR",
-        "abbreviations": "African Commission on Human and Peoples' Rights",
-        "individualComplaint": "https://achpr.au.int/en/guidelines-submitting-complaints"
-      },
-      {
-        "institution": "EACJ",
-        "abbreviations": "East African Court of Justice",
-        "individualComplaint": "https://www.justiceinitiative.org/publications/east-african-court-justice"
-      },
-      {
-        "institution": "IACHR",
-        "abbreviations": "Inter-American Commission on Human Rights",
-        "individualComplaint": "https://www.oas.org/en/IACHR/jsForm/?File=/en/iachr/mandate/petitions.asp"
-      },
-      {
-        "institution": "ACtHPR",
-        "abbreviations": "African Court on Human and Peoples' Rights",
-        "individualComplaint": "https://www.african-court.org/wpafc/how-to-file-a-case/"
-      },
-      {
-        "institution": "ECOWAS",
-        "abbreviations": "Economic Community of West African States",
-        "individualComplaint": "http://www.courtecowas.org/practical-information/"
-      }
-    ]
-  }
-  
+  "UNTrendyBody": [
+    {
+      "committee": "CCPR",
+      "abbreviations": "Human Rights Committee",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CEDAW",
+      "abbreviations": "Committee on the Elimination of Discrimination against Women",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CAT",
+      "abbreviations": "Committee Against Torture",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CRC",
+      "abbreviations": "Committee on the Rights of the Child",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CED",
+      "abbreviations": "Committee on Enforced Disappearance",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CERD",
+      "abbreviations": "Committee on the Elimination of Racial Discrimination",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CESCR",
+      "abbreviations": "Committee on Economic, Social and Cultural Rights",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "CRPD",
+      "abbreviations": "Committee on the Rights of Persons with Disabilities",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "NEW",
+      "abbreviations": "Sample stuff",
+      "individualComplaint": "no",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    },
+    {
+      "committee": "NEWDEC",
+      "abbreviations": "Sample body dec2023",
+      "individualComplaint": "yes",
+      "individualComplaintLink": "https://www.ohchr.org/en/documents/tools-and-resources/form-and-guidance-submitting-individual-communication-treaty-bodies",
+      "enquiry": "https://www.ohchr.org/en/treaty-bodies/complaints-about-human-rights-violations#inquiries"
+    }
+  ],
+  "regionalOnes": [
+    {
+      "institution": "ACERWC",
+      "abbreviations": "African Committee of Experts on the Rights and Welfare of the Child",
+      "individualComplaint": "https://www.acerwc.africa/en/page/guidelines-consideration-communications-and-monitoring-implementation-decisions"
+    },
+    {
+      "institution": "ECtHR",
+      "abbreviations": "European Court of Human Rights",
+      "individualComplaint": "https://r39.echr.coe.int/"
+    },
+    {
+      "institution": "Frontex",
+      "abbreviations": "Frontex",
+      "individualComplaint": "https://microsite.frontex.europa.eu/en/Complaints"
+    },
+    {
+      "institution": "ACHPR",
+      "abbreviations": "African Commission on Human and Peoples",
+      "individualComplaint": "https://achpr.au.int/en/guidelines-submitting-complaints"
+    },
+    {
+      "institution": "EACJ",
+      "abbreviations": "East African Court of Justice",
+      "individualComplaint": "https://www.justiceinitiative.org/publications/east-african-court-justice"
+    },
+    {
+      "institution": "IACHR",
+      "abbreviations": "Inter-American Commission on Human Rights",
+      "individualComplaint": "https://www.oas.org/en/IACHR/jsForm/?File=/en/iachr/mandate/petitions.asp"
+    },
+    {
+      "institution": "ACtHPR",
+      "abbreviations": "African Court on Human and Peoples",
+      "individualComplaint": "https://www.african-court.org/wpafc/how-to-file-a-case/"
+    },
+    {
+      "institution": "ECOWAS",
+      "abbreviations": "Economic Community of West African States",
+      "individualComplaint": "http://www.courtecowas.org/practical-information/"
+    },
+    {
+      "institution": "NEW_REG",
+      "abbreviations": "NEw Regional",
+      "individualComplaint": "http://www.courtecowas.org/practical-information/"
+    },
+    {
+      "institution": "NEW_REG_DEC2023",
+      "abbreviations": "NEw Regional",
+      "individualComplaint": "http://www.courtecowas.org/practical-information/"
+    }
+  ],
+  "datetime": "2024-01-01 09:23:00.482930"
+}
