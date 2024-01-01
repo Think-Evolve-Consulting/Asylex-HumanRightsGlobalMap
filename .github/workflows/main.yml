@@ -2,7 +2,7 @@ name: Periodic Pipeline
 
 on:
   schedule:
-    - cron: '0/15 * * * *' # Run every 15mins
+    - cron: '0 23 * * * 1' # Run every 15mins
 
 env:
   GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY}} 
