@@ -63,7 +63,7 @@ function downloadPdf(button, dynamicValue) {
     doc.text(`${country}`, 105, 26, null, null, "center");
   };
 
-  fetch("../data/countries_small_updated_Aug2023.geojson")
+  fetch("../data/countries_small_updated_Jan2024.geojson")
     .then((res) => res.json())
     .then((mapData) => {
       let d = mapData?.features.filter(

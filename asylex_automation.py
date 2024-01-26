@@ -12,7 +12,7 @@ import datetime
 GCP_SERVICE_ACCOUNT_KEY = os.environ["GCP_SERVICE_ACCOUNT_KEY"]
 SHEET_ID = os.environ["SHEET_ID"]
 
-GEOJSON_SMALL = "data/countries_small_updated_Aug2023.geojson"
+GEOJSON_SMALL = "data/countries_small_updated_Jan2024.geojson"
 TREATY_BODIES = "data/UNTrendyBodyAndRegionalOnes.json"
 
 ## SOURCE: https://medium.com/geekculture/2-easy-ways-to-read-google-sheets-data-using-python-9e7ef366c775
