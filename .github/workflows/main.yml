@@ -37,7 +37,7 @@ jobs:
 
       - name: Commit Changes to Countries geojson
         run: |
-          git add data/countries_small_updated_Aug2023.geojson
+          git add data/countries_small_updated_Jan2024.geojson
           git commit -m "Commited countries data"
 
       - name: Push commits to repo
