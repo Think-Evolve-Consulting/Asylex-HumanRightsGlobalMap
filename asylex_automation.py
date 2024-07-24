@@ -45,6 +45,8 @@ with open(TREATY_BODIES, "w+") as fp:
 sheet = client.open_by_key(SHEET_ID)
 country_df = pd.DataFrame(sheet.sheet1.get_all_records())
 
+country_df["Country"] = country_df["Country"].apply(lambda x: x.strip())
+
 # Reading the geojson file
 with open(GEOJSON_SMALL) as fp:
          geojson_small = geojson.load(fp)
