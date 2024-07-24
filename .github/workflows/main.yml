@@ -2,7 +2,7 @@ name: Periodic Pipeline
 
 on:
   schedule:
-    - cron: '*/10 * * * *' # Updates every Sunday at 23:00 hours UTC:: '* 23 * * 0'  
+    - cron: '* 23 * * 0' # Updates every Sunday at 23:00 hours UTC:: '* 23 * * 0' 10mins interval  */10 * * * *
 
 env:
   GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY}} 
