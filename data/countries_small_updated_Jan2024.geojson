@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-07-24 04:29:50.324969",
+  "datetime": "2024-07-28 23:07:50.363424",
   "features": [
     {
       "type": "Feature",
@@ -7033,7 +7033,7 @@
             "RelevantReservations": "-"
           },
           {
-            "Committee": "CRDP",
+            "Committee": "CRPD",
             "IndividualComplaint": "Yes",
             "Inquiry": "Yes",
             "RelevantReservations": "-"
@@ -21477,7 +21477,7 @@
             "RelevantReservations": "-"
           },
           {
-            "Committee": "CRDP",
+            "Committee": "CRPD",
             "IndividualComplaint": "Yes",
             "Inquiry": "Yes",
             "RelevantReservations": "-"
@@ -36276,7 +36276,7 @@
             "RelevantReservations": "Art. 3"
           },
           {
-            "Committee": "CRDP",
+            "Committee": "CRPD",
             "IndividualComplaint": "Yes",
             "Inquiry": "Yes",
             "RelevantReservations": ""
@@ -51359,14 +51359,7 @@
         "MIN_ZOOM": 4.7,
         "MIN_LABEL": 6,
         "MAX_LABEL": 11,
-        "UNTreatyBody": [
-          {
-            "Committee": "?",
-            "IndividualComplaint": "",
-            "Inquiry": "",
-            "RelevantReservations": ""
-          }
-        ],
+        "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [
           {
             "Institution": "ACHPR",
@@ -58337,14 +58330,7 @@
         "MIN_ZOOM": 0,
         "MIN_LABEL": 3,
         "MAX_LABEL": 8,
-        "UNTreatyBody": [
-          {
-            "Committee": "?",
-            "IndividualComplaint": "",
-            "Inquiry": "",
-            "RelevantReservations": ""
-          }
-        ],
+        "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
       }
