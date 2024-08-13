@@ -15,6 +15,8 @@ SHEET_ID = os.environ["SHEET_ID"]
 GEOJSON_SMALL = "data/countries_small_updated_Aug2024.geojson"
 TREATY_BODIES = "data/UNTrendyBodyAndRegionalOnes.json"
 
+french_pattern = r'[ô]'
+
 ## SOURCE: https://medium.com/geekculture/2-easy-ways-to-read-google-sheets-data-using-python-9e7ef366c775
 # Set up the credentials
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/spreadsheets",
@@ -77,7 +79,10 @@ def row2json_un(row):
 for bbox in geojson_small["features"]:
          country = bbox["properties"]["ADMIN"]
 
-         temp = country_df[country_df["Country"] == country] 
+         if country == 'Côte d’Ivoire':
+                  temp = country_df[country_df["Country"].str.contains(french_pattern, case=False, na=False)] 
+         else:
+                  temp = country_df[country_df["Country"] == country] 
          hr_list=list()
          reg_list=list()
 
