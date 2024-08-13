@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-08-13 17:43:51.157536",
+  "datetime": "2024-08-13 18:17:32.483554",
   "features": [
     {
       "type": "Feature",
@@ -16847,8 +16847,46 @@
         "MIN_ZOOM": 0,
         "MIN_LABEL": 3,
         "MAX_LABEL": 8,
-        "UNTreatyBody": [],
-        "regionalHumanRightsMechanism": [],
+        "UNTreatyBody": [
+          {
+            "Committee": "CCPR",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "-",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CEDAW",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CAT",
+            "IndividualComplaint": "-",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CED",
+            "IndividualComplaint": "-",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          }
+        ],
+        "regionalHumanRightsMechanism": [
+          {
+            "Institution": "ACHPR",
+            "IndividualComplaint": "Yes"
+          },
+          {
+            "Institution": "ACERWC",
+            "IndividualComplaint": "Yes"
+          },
+          {
+            "Institution": "ECOWAS",
+            "IndividualComplaint": "Yes"
+          }
+        ],
         "colour": "0160C9"
       }
     },
