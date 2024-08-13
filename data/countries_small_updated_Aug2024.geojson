@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-08-13 22:09:42.053336",
+  "datetime": "2024-08-13 17:36:51.808206",
   "features": [
     {
       "type": "Feature",
@@ -19819,8 +19819,60 @@
         "MIN_ZOOM": 0,
         "MIN_LABEL": 4,
         "MAX_LABEL": 9,
-        "UNTreatyBody": [],
-        "regionalHumanRightsMechanism": [],
+        "UNTreatyBody": [
+          {
+            "Committee": "CERD",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "-",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CCPR",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "-",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CEDAW",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CAT",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRC",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRPD",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CED",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          }
+        ],
+        "regionalHumanRightsMechanism": [
+          {
+            "Institution": "ECtHR",
+            "IndividualComplaint": "Yes"
+          },
+          {
+            "Institution": "Frontex",
+            "IndividualComplaint": "Yes"
+          }
+        ],
         "colour": "0041C7"
       }
     },
@@ -55512,8 +55564,30 @@
         "MIN_ZOOM": 0,
         "MIN_LABEL": 4,
         "MAX_LABEL": 9,
-        "UNTreatyBody": [],
-        "regionalHumanRightsMechanism": [],
+        "UNTreatyBody": [
+          {
+            "Committee": "CAT",
+            "IndividualComplaint": "-",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRPD",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          }
+        ],
+        "regionalHumanRightsMechanism": [
+          {
+            "Institution": "ACERWC",
+            "IndividualComplaint": "Yes"
+          },
+          {
+            "Institution": "ACHPR",
+            "IndividualComplaint": "Yes"
+          }
+        ],
         "colour": "#fff"
       }
     },
@@ -57394,7 +57468,26 @@
         "MIN_ZOOM": 0,
         "MIN_LABEL": 4,
         "MAX_LABEL": 9,
-        "UNTreatyBody": [],
+        "UNTreatyBody": [
+          {
+            "Committee": "CEDAW",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CAT",
+            "IndividualComplaint": "-",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRPD",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          }
+        ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
       }
