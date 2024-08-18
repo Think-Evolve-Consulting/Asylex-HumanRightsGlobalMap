@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-08-13 18:17:32.483554",
+  "datetime": "2024-08-18 23:15:04.636945",
   "features": [
     {
       "type": "Feature",
@@ -16,6 +16,7 @@
         75.158028,
         38.486282
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -381,8 +382,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -392,6 +392,7 @@
         24.079905,
         -4.438023
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -814,8 +815,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -825,6 +825,7 @@
         21.02004,
         42.688247
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -1043,8 +1044,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -1054,6 +1054,7 @@
         56.396847,
         26.055464
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -1224,8 +1225,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -1235,6 +1235,7 @@
         -53.628349,
         -21.83231
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -1861,8 +1862,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -1872,6 +1872,7 @@
         46.50572,
         41.248129
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -2086,8 +2087,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -2097,6 +2097,7 @@
         180,
         -63.27066
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -4853,8 +4854,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -4864,6 +4864,7 @@
         70.56,
         -48.625
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -4982,8 +4983,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -4993,6 +4993,7 @@
         153.569469,
         -10.668186
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -6076,8 +6077,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -6087,6 +6087,7 @@
         16.979667,
         49.039074
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -6363,8 +6364,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -6374,6 +6374,7 @@
         50.392821,
         41.860675
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -6678,8 +6679,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -6689,6 +6689,7 @@
         30.75224,
         -2.348487
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -6849,8 +6850,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -6860,6 +6860,7 @@
         6.156658,
         51.475024
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -7068,8 +7069,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -7079,6 +7079,7 @@
         3.797112,
         12.235636
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -7311,8 +7312,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -7322,6 +7322,7 @@
         2.177108,
         15.116158
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -7608,8 +7609,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -7619,6 +7619,7 @@
         92.672721,
         26.446526
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -7864,8 +7865,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -7875,6 +7875,7 @@
         28.558081,
         44.234923
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -8103,8 +8104,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -8114,6 +8114,7 @@
         -77,
         27.04
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -8295,8 +8296,7 @@
           }
         ],
         "colour": "#fff"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -8306,6 +8306,7 @@
         19.59976,
         45.233777
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -8532,8 +8533,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -8543,6 +8543,7 @@
         32.693643,
         56.16913
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -8829,8 +8830,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -8840,6 +8840,7 @@
         -88.106813,
         18.499982
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -9026,8 +9027,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -9037,6 +9037,7 @@
         -57.498371,
         -9.761988
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -9413,8 +9414,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -9424,6 +9424,7 @@
         -34.729993,
         5.244486
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -10366,8 +10367,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -10377,6 +10377,7 @@
         115.45071,
         5.44773
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -10491,8 +10492,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -10502,6 +10502,7 @@
         92.103712,
         28.296439
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -10636,8 +10637,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -10647,6 +10647,7 @@
         29.432188,
         -17.661816
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -10911,8 +10912,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -10922,6 +10922,7 @@
         27.374226,
         11.142395
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -11292,8 +11293,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -11303,6 +11303,7 @@
         -52.648099,
         83.23324
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -14713,8 +14714,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -14724,6 +14724,7 @@
         10.442701,
         47.830828
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -14942,8 +14943,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -14953,6 +14953,7 @@
         -66.95992,
         -17.580012
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -15545,8 +15546,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -15556,6 +15556,7 @@
         135.026311,
         53.4588
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -16604,8 +16605,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -16615,6 +16615,7 @@
         -2.56219,
         10.524061
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -16919,8 +16920,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -16930,6 +16930,7 @@
         16.012852,
         12.859396
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -17284,8 +17285,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -17295,6 +17295,7 @@
         31.174149,
         5.256088
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -17901,8 +17902,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -17912,6 +17912,7 @@
         18.453065,
         3.728197
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -18218,8 +18219,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -18229,6 +18229,7 @@
         -66.876326,
         12.437303
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -18741,8 +18742,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -18752,6 +18752,7 @@
         -82.546196,
         11.217119
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19032,8 +19033,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -19043,6 +19043,7 @@
         -74.178025,
         23.188611
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19311,8 +19312,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -19322,6 +19322,7 @@
         34.576474,
         35.671596
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19468,8 +19469,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -19479,6 +19479,7 @@
         34.004881,
         35.173125
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19667,8 +19668,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -19678,6 +19678,7 @@
         18.853144,
         51.117268
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -19952,8 +19953,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -19963,6 +19963,7 @@
         15.016996,
         54.983104
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -20329,8 +20330,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -20340,6 +20340,7 @@
         43.317852,
         12.699639
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -20510,8 +20511,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -20521,6 +20521,7 @@
         12.690006,
         57.730017
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -20757,8 +20758,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -20768,6 +20768,7 @@
         -68.317943,
         19.884911
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -20984,8 +20985,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -20995,6 +20995,7 @@
         11.999506,
         37.118381
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -21353,8 +21354,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -21364,6 +21364,7 @@
         -75.233723,
         1.380924
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -21632,8 +21633,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -21643,6 +21643,7 @@
         36.86623,
         31.58568
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -21917,8 +21918,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -21928,6 +21928,7 @@
         43.081226,
         17.998307
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -22131,8 +22132,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -22142,6 +22142,7 @@
         3.039484,
         43.748338
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -22486,8 +22487,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -22497,6 +22497,7 @@
         28.131699,
         59.61109
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -22689,8 +22690,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -22700,6 +22700,7 @@
         47.78942,
         14.95943
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -23034,8 +23035,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -23045,6 +23045,7 @@
         31.516092,
         70.164193
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -23345,8 +23346,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -23356,6 +23356,7 @@
         180,
         -16.020882
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -23543,8 +23544,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -23554,6 +23554,7 @@
         -57.75,
         -51.1
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -23676,8 +23677,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -23687,6 +23687,7 @@
         9.560016,
         51.148506
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -24133,8 +24134,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -24144,6 +24144,7 @@
         14.425456,
         2.326758
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -24396,8 +24397,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -24407,6 +24407,7 @@
         1.681531,
         58.635
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -24743,8 +24744,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -24754,6 +24754,7 @@
         46.637908,
         43.553104
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -24978,8 +24979,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -24989,6 +24989,7 @@
         1.060122,
         11.098341
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -25213,8 +25214,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -25224,6 +25224,7 @@
         -7.8321,
         12.586183
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -25618,8 +25619,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -25629,6 +25629,7 @@
         -13.844963,
         13.876492
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -25817,8 +25818,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -25828,6 +25828,7 @@
         -13.700476,
         12.62817
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -26028,8 +26029,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -26039,6 +26039,7 @@
         11.285079,
         2.283866
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -26171,8 +26172,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -26182,6 +26182,7 @@
         26.604196,
         41.826905
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -26526,8 +26527,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -26537,6 +26537,7 @@
         -12.20855,
         83.64513
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -27154,8 +27155,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -27165,6 +27165,7 @@
         -88.225023,
         17.819326
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -27417,8 +27418,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -27428,6 +27428,7 @@
         -56.539386,
         8.367035
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -27688,8 +27689,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -27699,6 +27699,7 @@
         -83.147219,
         16.005406
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -28045,8 +28046,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -28056,6 +28056,7 @@
         19.390476,
         46.503751
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -28352,8 +28353,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -28363,6 +28363,7 @@
         -71.624873,
         19.915684
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -28541,8 +28542,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -28552,6 +28552,7 @@
         22.710531,
         48.623854
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -28802,8 +28803,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -28813,6 +28813,7 @@
         141.033852,
         5.479821
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -29952,8 +29953,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -29963,6 +29963,7 @@
         97.402561,
         35.49401
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -30601,8 +30602,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -30612,6 +30612,7 @@
         -6.032985,
         55.131622
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -30782,8 +30783,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -30793,6 +30793,7 @@
         63.316632,
         39.713003
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -31179,8 +31180,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -31190,6 +31190,7 @@
         48.567971,
         37.385264
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -31405,8 +31406,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -31416,6 +31416,7 @@
         -13.609732,
         66.526792
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -31612,8 +31613,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -31623,6 +31623,7 @@
         35.836397,
         33.277426
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -31809,8 +31810,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -31820,6 +31820,7 @@
         18.480247,
         47.115393
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -32318,8 +32319,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -32329,6 +32329,7 @@
         -76.199659,
         18.524218
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -32467,8 +32468,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -32478,6 +32478,7 @@
         39.195468,
         33.378686
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -32643,8 +32644,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -32654,6 +32654,7 @@
         145.543137,
         45.551483
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -33019,8 +33020,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -33030,6 +33030,7 @@
         87.35997,
         55.38525
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -33603,8 +33604,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -33614,6 +33614,7 @@
         41.855083,
         5.506
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -33864,8 +33865,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -33875,6 +33875,7 @@
         80.25999,
         43.298339
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -34116,8 +34117,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -34127,6 +34127,7 @@
         107.614548,
         14.570584
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -34296,8 +34297,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -34307,6 +34307,7 @@
         129.468304,
         38.612243
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -34502,8 +34503,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -34513,6 +34513,7 @@
         21.77505,
         43.27205
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -34679,8 +34680,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -34690,6 +34690,7 @@
         48.416094,
         30.05907
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -34808,8 +34809,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -34819,6 +34819,7 @@
         107.564525,
         22.464753
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -35049,8 +35050,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -35060,6 +35060,7 @@
         36.61175,
         34.644914
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -35193,8 +35194,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -35204,6 +35204,7 @@
         -7.539715,
         8.541055
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -35414,8 +35415,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -35425,6 +35425,7 @@
         25.16482,
         33.136996
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -35759,8 +35760,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -35770,6 +35770,7 @@
         81.787959,
         9.824078
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -35917,8 +35918,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -35928,6 +35928,7 @@
         29.325166,
         -28.647502
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -36092,8 +36093,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -36103,6 +36103,7 @@
         26.588279,
         56.372528
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -36307,8 +36308,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -36318,6 +36318,7 @@
         6.242751,
         50.128052
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -36486,8 +36487,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -36497,6 +36497,7 @@
         28.176709,
         57.970157
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -36695,8 +36696,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -36706,6 +36706,7 @@
         -1.124551,
         35.759988
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -37077,8 +37078,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -37088,6 +37088,7 @@
         30.024659,
         48.467119
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -37318,8 +37319,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -37329,6 +37329,7 @@
         50.476537,
         -12.040557
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -37629,8 +37630,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -37640,6 +37640,7 @@
         -86.811982,
         32.72083
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -38444,8 +38445,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -38455,6 +38455,7 @@
         22.952377,
         42.32026
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -38649,8 +38650,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -38660,6 +38660,7 @@
         4.27021,
         24.974574
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -39094,8 +39095,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -39105,6 +39105,7 @@
         101.180005,
         28.335945
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -39467,8 +39468,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -39478,6 +39478,7 @@
         20.3398,
         43.52384
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -39690,8 +39691,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -39701,6 +39701,7 @@
         119.772824,
         52.047366
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -40126,8 +40127,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -40137,6 +40137,7 @@
         40.775475,
         -10.317096
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -40563,8 +40564,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -40574,6 +40574,7 @@
         -4.923337,
         27.395744
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -40834,8 +40835,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -40845,6 +40845,7 @@
         35.771905,
         -9.230599
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -41071,8 +41072,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -41082,6 +41082,7 @@
         119.181904,
         6.928053
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -41418,8 +41419,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -41429,6 +41429,7 @@
         25.084443,
         -16.941343
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -41721,8 +41722,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -41732,6 +41732,7 @@
         167.120011,
         -20.105646
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -41866,8 +41867,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -41877,6 +41877,7 @@
         15.903247,
         23.471668
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -42245,8 +42246,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -42256,6 +42256,7 @@
         14.577178,
         13.865924
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -42612,8 +42613,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -42623,6 +42623,7 @@
         -83.147219,
         15.016267
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -42932,8 +42933,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -42943,6 +42943,7 @@
         7.092053,
         53.510403
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -43125,8 +43126,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -43136,6 +43136,7 @@
         31.293418,
         80.657144
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -43624,8 +43625,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -43635,6 +43635,7 @@
         88.174804,
         30.422717
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -43834,8 +43835,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -43845,6 +43845,7 @@
         178.517094,
         -34.450662
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -44228,8 +44229,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -44239,6 +44239,7 @@
         59.80806,
         26.395934
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -44522,8 +44523,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -44533,6 +44533,7 @@
         77.837451,
         37.133031
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -44851,8 +44852,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -44862,6 +44862,7 @@
         -77.242566,
         9.61161
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -45200,8 +45201,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -45211,6 +45211,7 @@
         -68.66508,
         -0.057205
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -45645,8 +45646,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -45656,6 +45656,7 @@
         126.537424,
         18.505227
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -46223,8 +46224,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -46234,6 +46234,7 @@
         156.019965,
         -2.500002
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -46654,8 +46655,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -46665,6 +46665,7 @@
         24.029986,
         54.851536
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -46961,8 +46962,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -46972,6 +46972,7 @@
         -65.591004,
         18.520601
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -47090,8 +47091,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -47101,6 +47101,7 @@
         130.780007,
         42.985387
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -47381,8 +47382,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -47392,6 +47392,7 @@
         -6.389088,
         42.280469
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -47664,8 +47665,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -47675,6 +47675,7 @@
         -54.29296,
         -19.342747
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -47931,8 +47932,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -47942,6 +47942,7 @@
         35.545665,
         32.532511
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -48091,8 +48092,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -48102,6 +48102,7 @@
         51.6067,
         26.114582
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -48227,8 +48228,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -48238,6 +48238,7 @@
         29.626543,
         48.220881
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -48526,8 +48527,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -48537,6 +48537,7 @@
         180,
         81.2504
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -51203,8 +51204,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -51214,6 +51214,7 @@
         30.816135,
         -1.134659
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -51384,8 +51385,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -51395,6 +51395,7 @@
         -8.665124,
         27.656426
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -51594,8 +51595,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -51605,6 +51605,7 @@
         55.666659,
         32.161009
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -51998,8 +51999,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -52009,6 +52009,7 @@
         38.41009,
         22
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -52443,8 +52444,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -52454,6 +52454,7 @@
         35.298007,
         12.248008
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -52818,8 +52819,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -52829,6 +52829,7 @@
         -11.467899,
         16.598264
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -53131,8 +53132,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -53142,6 +53142,7 @@
         162.398646,
         -6.599338
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -53397,8 +53398,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -53408,6 +53408,7 @@
         -10.230094,
         10.046984
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -53604,8 +53605,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -53615,6 +53615,7 @@
         -87.723503,
         14.424133
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -53819,8 +53820,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -53830,6 +53830,7 @@
         48.948206,
         11.46204
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54016,8 +54017,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -54027,6 +54027,7 @@
         51.13387,
         12.02464
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54275,8 +54276,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -54286,6 +54286,7 @@
         22.986019,
         46.17173
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54612,8 +54613,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -54623,6 +54623,7 @@
         -53.958045,
         6.025291
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -54827,8 +54828,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -54838,6 +54838,7 @@
         22.558138,
         49.571574
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -55110,8 +55111,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -55121,6 +55121,7 @@
         16.564808,
         46.852386
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -55327,8 +55328,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -55338,6 +55338,7 @@
         23.903379,
         69.106247
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -55620,8 +55621,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -55631,6 +55631,7 @@
         32.071665,
         -25.660191
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -55779,8 +55780,7 @@
           }
         ],
         "colour": "#fff"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -55790,6 +55790,7 @@
         42.349591,
         37.229873
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -55987,8 +55988,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -55998,6 +55998,7 @@
         23.88689,
         23.40972
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -56334,8 +56335,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -56345,6 +56345,7 @@
         1.865241,
         11.018682
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -56547,8 +56548,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -56558,6 +56558,7 @@
         105.589039,
         20.41785
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -56921,8 +56922,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -56932,6 +56932,7 @@
         74.980002,
         40.960213
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -57197,8 +57198,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -57208,6 +57208,7 @@
         66.54615,
         42.751551
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -57531,8 +57532,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -57542,6 +57542,7 @@
         127.335928,
         -8.273345
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -57687,8 +57688,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -57698,6 +57698,7 @@
         -60.895,
         10.89
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -57824,8 +57825,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -57835,6 +57835,7 @@
         11.488787,
         37.349994
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -58087,8 +58088,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -58098,6 +58098,7 @@
         44.79399,
         42.141485
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -58498,8 +58499,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -58509,6 +58509,7 @@
         121.951244,
         25.295459
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -58627,8 +58628,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -58638,6 +58638,7 @@
         40.31659,
         -0.95
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -58954,8 +58955,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -58965,6 +58965,7 @@
         35.03599,
         4.249885
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -59191,8 +59192,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -59202,6 +59202,7 @@
         40.080789,
         52.335075
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -59708,8 +59709,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -59719,6 +59719,7 @@
         -53.209589,
         -30.109686
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -59939,8 +59940,7 @@
           }
         ],
         "colour": "0041C7"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -59950,6 +59950,7 @@
         -66.96466,
         71.357764
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -61874,8 +61875,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -61885,6 +61885,7 @@
         73.055417,
         45.586804
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -62196,8 +62197,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -62207,6 +62207,7 @@
         -59.758285,
         12.162307
       ],
+      "colour": "0160C9",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -62699,8 +62700,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0160C9"
+      }
     },
     {
       "type": "Feature",
@@ -62710,6 +62710,7 @@
         109.33527,
         23.352063
       ],
+      "colour": "#fff",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -62968,8 +62969,7 @@
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
         "colour": "#fff"
-      },
-      "colour": "#fff"
+      }
     },
     {
       "type": "Feature",
@@ -62979,6 +62979,7 @@
         167.844877,
         -14.626497
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -63128,8 +63129,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -63139,6 +63139,7 @@
         53.108573,
         19.000003
       ],
+      "colour": "1CA3DE",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -63410,8 +63411,7 @@
         ],
         "regionalHumanRightsMechanism": [],
         "colour": "1CA3DE"
-      },
-      "colour": "1CA3DE"
+      }
     },
     {
       "type": "Feature",
@@ -63421,6 +63421,7 @@
         32.83012,
         -22.091313
       ],
+      "colour": "0041C7",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -63927,8 +63928,7 @@
           }
         ],
         "colour": "0160C9"
-      },
-      "colour": "0041C7"
+      }
     },
     {
       "type": "Feature",
@@ -63938,6 +63938,7 @@
         33.485688,
         -8.238257
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -64292,8 +64293,7 @@
           }
         ],
         "colour": "0D85D8"
-      },
-      "colour": "0D85D8"
+      }
     },
     {
       "type": "Feature",
@@ -64303,6 +64303,7 @@
         32.849861,
         -15.507787
       ],
+      "colour": "0D85D8",
       "geometry": {
         "type": "Polygon",
         "coordinates": [
@@ -64549,8 +64550,7 @@
           }
         ],
         "colour": "1CA3DE"
-      },
-      "colour": "0D85D8"
+      }
     }
   ]
 }
