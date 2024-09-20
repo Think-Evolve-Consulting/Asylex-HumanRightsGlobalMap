@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-09-16 01:39:06.571619",
+  "datetime": "2024-09-20 23:45:14.586426",
   "features": [
     {
       "type": "Feature",
@@ -814,7 +814,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -1224,7 +1224,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -2086,7 +2086,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -4853,7 +4853,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -4982,7 +4982,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -6363,7 +6363,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -7311,7 +7311,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -7864,7 +7864,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -8103,7 +8103,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -8295,7 +8295,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -8532,7 +8532,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -9026,7 +9026,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -10366,7 +10366,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -10491,7 +10491,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -10636,7 +10636,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -10911,7 +10911,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -11292,7 +11292,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -14713,7 +14713,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -15545,7 +15545,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -16604,7 +16604,7 @@
         "MAX_LABEL": 5.7,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -19311,7 +19311,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -19468,7 +19468,7 @@
         "MAX_LABEL": 10,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -19667,7 +19667,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -21917,7 +21917,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -22689,7 +22689,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -23034,7 +23034,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -23291,61 +23291,15 @@
             "IndividualComplaint": "Yes",
             "Inquiry": "-",
             "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CESCR",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CCPR",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "-",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CEDAW",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CAT",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CRC",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CRPD",
-            "IndividualComplaint": "Yes",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
-          },
-          {
-            "Committee": "CED",
-            "IndividualComplaint": "-",
-            "Inquiry": "Yes",
-            "RelevantReservations": "-"
           }
         ],
         "regionalHumanRightsMechanism": [
           {
             "Institution": "ECtHR",
             "IndividualComplaint": "Yes"
-          },
-          {
-            "Institution": "Frontex",
-            "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0041C7"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -23543,7 +23497,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -23676,7 +23630,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -24396,7 +24350,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -24978,7 +24932,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -25213,7 +25167,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -25618,7 +25572,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -25817,7 +25771,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -26028,7 +25982,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0041C7"
       }
     },
     {
@@ -26171,7 +26125,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -27154,7 +27108,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -27688,7 +27642,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -28045,7 +27999,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -30601,7 +30555,7 @@
         "MAX_LABEL": 6.7,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -30782,7 +30736,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -31179,7 +31133,7 @@
         "MAX_LABEL": 6.7,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -31612,7 +31566,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -31809,7 +31763,7 @@
         "MAX_LABEL": 8,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -33603,7 +33557,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -34116,7 +34070,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -34296,7 +34250,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -34502,7 +34456,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -34679,7 +34633,7 @@
         "MAX_LABEL": 10,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -34808,7 +34762,7 @@
         "MAX_LABEL": 10,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -35049,7 +35003,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -35414,7 +35368,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -35917,7 +35871,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -36092,7 +36046,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -36307,7 +36261,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -37629,7 +37583,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -39467,7 +39421,7 @@
         "MAX_LABEL": 8,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -40126,7 +40080,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -41071,7 +41025,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -41721,7 +41675,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -41866,7 +41820,7 @@
         "MAX_LABEL": 8,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -42612,7 +42566,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -43624,7 +43578,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -44522,7 +44476,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -44851,7 +44805,7 @@
         "MAX_LABEL": 7,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -45200,7 +45154,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -45645,7 +45599,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -46223,7 +46177,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -46654,7 +46608,7 @@
         "MAX_LABEL": 7.5,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -46961,7 +46915,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -47090,7 +47044,7 @@
         "MAX_LABEL": 8,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -47381,7 +47335,7 @@
         "MAX_LABEL": 8,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -51384,7 +51338,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -52818,7 +52772,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -53131,7 +53085,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -54016,7 +53970,7 @@
         "MAX_LABEL": 9,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -54275,7 +54229,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -54612,7 +54566,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -54827,7 +54781,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -55779,7 +55733,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "#fff"
+        "colour": "0D85D8"
       }
     },
     {
@@ -56547,7 +56501,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -57197,7 +57151,7 @@
           }
         ],
         "regionalHumanRightsMechanism": [],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -59191,7 +59145,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -61874,7 +61828,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     },
     {
@@ -62699,7 +62653,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0D85D8"
+        "colour": "0160C9"
       }
     },
     {
@@ -62968,7 +62922,7 @@
         "MAX_LABEL": 7,
         "UNTreatyBody": [],
         "regionalHumanRightsMechanism": [],
-        "colour": "#fff"
+        "colour": "1CA3DE"
       }
     },
     {
@@ -63927,7 +63881,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "0160C9"
+        "colour": "0041C7"
       }
     },
     {
@@ -64549,7 +64503,7 @@
             "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0D85D8"
       }
     }
   ]
