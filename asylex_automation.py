@@ -26,8 +26,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(json.loads(GCP_SERVICE_
 client = gspread.authorize(creds)
 
 # Open the Google Sheet using its name
-# 1F3XoC8hm-AgPMALQxoXAMS-DyGfAnRtcV27ysGRS4J8 - Asylex
-# 1Qt48KMf-04KXTGCyutH6cKAocKDWB5kJNSZnv-mOvjA - sample
 sheet = client.open_by_key(SHEET_ID)
 
 #Read the treaty bodies
@@ -37,6 +35,14 @@ regionalbodies = sheet.worksheet('Regional').get_all_records()
 all_bodies = { "UNTrendyBody" : untreatybodies,
               "regionalOnes" : regionalbodies,
              "datetime": str(datetime.datetime.now())}
+
+color_codes = {
+         8: "0041C7",
+         6: "0160C9",
+         3: "0D85D8",
+         1: "1CA3DE",
+         0: "#FFF",
+}
 
 #write to the specified json file
 with open(TREATY_BODIES, "w+") as fp:
@@ -98,6 +104,23 @@ for bbox in geojson_small["features"]:
          
          bbox["properties"]["UNTreatyBody"] = hr_list
          bbox["properties"]["regionalHumanRightsMechanism"] = reg_list
+
+         # Checking the total number of available agencies and mapping them to the color code
+         # The count will have to be rounded of to the mapping -- dont remember how I did it in 
+         # the first iteration. I think that was way back when I was in Kawal 
+         agency_count = len(hr_list) + len(reg_list)
+
+         if agency_count < 3:
+                  agency_count = 1
+         elif agency_count < 6:
+                  agency_count = 3
+         elif agency_count < 8:
+                  agency_count = 6
+         else:
+                  agency_count = 8
+         
+         bbox["properties"]["colour"] = color_codes[agency_count]
+         
 
 geojson_small["datetime"] = str(datetime.datetime.now())
 with open(GEOJSON_SMALL, "w+") as fp:
