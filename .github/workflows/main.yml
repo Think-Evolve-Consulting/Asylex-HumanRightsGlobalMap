@@ -2,8 +2,10 @@ name: Periodic Pipeline
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Updates every Sunday at 23:00 hours UTC:: '* 23 * * 0' 10mins interval  */10 * * * *
-
+    - cron: '*/10 * * * *' # Updates every Sunday at 23:00 hours UTC:: '* 23 * * 0' 10mins interval  */10 * * * *
+  push:
+  workflow_dispatch:
+  
 env:
   GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY}} 
   SHEET_ID: ${{ secrets.SHEET_ID }}
