@@ -6,7 +6,7 @@
     180,
     83.64513
   ],
-  "datetime": "2024-09-20 23:55:30.791653",
+  "datetime": "2024-09-21 00:54:29.168804",
   "features": [
     {
       "type": "Feature",
@@ -23291,15 +23291,61 @@
             "IndividualComplaint": "Yes",
             "Inquiry": "-",
             "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CESCR",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CCPR",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "-",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CEDAW",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CAT",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRC",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CRPD",
+            "IndividualComplaint": "Yes",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
+          },
+          {
+            "Committee": "CED",
+            "IndividualComplaint": "-",
+            "Inquiry": "Yes",
+            "RelevantReservations": "-"
           }
         ],
         "regionalHumanRightsMechanism": [
           {
             "Institution": "ECtHR",
             "IndividualComplaint": "Yes"
+          },
+          {
+            "Institution": "Frontex",
+            "IndividualComplaint": "Yes"
           }
         ],
-        "colour": "1CA3DE"
+        "colour": "0041C7"
       }
     },
     {
