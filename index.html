@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- <script src="//unpkg.com/d3"></script>
-    <script src="//unpkg.com/globe.gl"></script> -->
+    <!-- MapLibre GL JS -->
+    <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 
+    <!-- Keep D3 for color scales -->
     <script src="/js/d3.js"></script>
-    <script src="/js/globe.gl.js"></script>
     <script
       src="https://kit.fontawesome.com/1e939a20d7.js"
       crossorigin="anonymous"
@@ -55,7 +55,7 @@
     <title>Human Rights Mechanisms</title>
   </head>
   <body>
-    <div id="globeViz"></div>
+    <div id="map"></div>
     <div id="popup-container"></div>
 
     <div id="table">
@@ -230,7 +230,8 @@
     </div>
 
     <script src="./js/index.js"></script>
-    <script src="./js/globe.js"></script>
+    <script src="./js/maplibre-globe-control.js"></script>
+    <script src="./js/map.js"></script>
     <script src="./js/autocomplete.js"></script>
     <script src="./js/makePdf.js"></script>
   </body>

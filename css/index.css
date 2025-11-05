@@ -417,3 +417,87 @@ tr:nth-child(even) {
     bottom: 30px;
   }
 }
+
+/* MapLibre GL JS Styles */
+#map {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Globe Control Styles */
+.maplibregl-ctrl-globe {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  transition: all 0.2s ease;
+}
+
+.maplibregl-ctrl-globe svg {
+  stroke: #333;
+  transition: stroke 0.2s ease;
+}
+
+.maplibregl-ctrl-globe:hover {
+  background: #f0f0f0;
+}
+
+.maplibregl-ctrl-globe-enabled {
+  background: #e6f2ff;
+}
+
+.maplibregl-ctrl-globe-enabled svg {
+  stroke: #33b5e5;
+}
+
+/* Override MapLibre control positions to avoid overlapping with existing UI */
+.maplibregl-ctrl-top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.maplibregl-ctrl-top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.maplibregl-ctrl-bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+.maplibregl-ctrl-bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Ensure popup appears above map */
+.maplibregl-popup {
+  z-index: 100;
+}
+
+/* Mobile adjustments for MapLibre controls */
+@media (max-width: 480px) {
+  .maplibregl-ctrl-top-right {
+    top: 5px;
+    right: 5px;
+  }
+
+  .maplibregl-ctrl-group button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .maplibregl-ctrl-globe {
+    width: 26px;
+    height: 26px;
+  }
+}
