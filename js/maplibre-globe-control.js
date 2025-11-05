@@ -45,16 +45,17 @@ class GlobeControl {
   }
 
   _toggleProjection() {
-    const currentProjection = this._map.getProjection().name;
+    const currentProjection = this._map.getProjection();
+    const projectionType = currentProjection ? currentProjection.type : 'mercator';
 
-    if (currentProjection === 'globe') {
+    if (projectionType === 'globe') {
       // Switch to flat Mercator projection
-      this._map.setProjection('mercator');
+      this._map.setProjection({ type: 'mercator' });
       this._button.classList.remove('maplibregl-ctrl-globe-enabled');
       this._button.title = 'Switch to Globe View';
     } else {
       // Switch to globe projection
-      this._map.setProjection('globe');
+      this._map.setProjection({ type: 'globe' });
       this._button.classList.add('maplibregl-ctrl-globe-enabled');
       this._button.title = 'Switch to Flat View';
     }
@@ -65,15 +66,19 @@ class GlobeControl {
    * @returns {boolean} true if globe projection is active
    */
   isGlobeEnabled() {
-    return this._map && this._map.getProjection().name === 'globe';
+    if (!this._map) return false;
+    const projection = this._map.getProjection();
+    return projection && projection.type === 'globe';
   }
 
   /**
    * Programmatically enable globe projection
    */
   enableGlobe() {
-    if (this._map && this._map.getProjection().name !== 'globe') {
-      this._map.setProjection('globe');
+    if (!this._map) return;
+    const projection = this._map.getProjection();
+    if (!projection || projection.type !== 'globe') {
+      this._map.setProjection({ type: 'globe' });
       this._button.classList.add('maplibregl-ctrl-globe-enabled');
       this._button.title = 'Switch to Flat View';
     }
@@ -83,8 +88,10 @@ class GlobeControl {
    * Programmatically disable globe projection (switch to Mercator)
    */
   disableGlobe() {
-    if (this._map && this._map.getProjection().name === 'globe') {
-      this._map.setProjection('mercator');
+    if (!this._map) return;
+    const projection = this._map.getProjection();
+    if (projection && projection.type === 'globe') {
+      this._map.setProjection({ type: 'mercator' });
       this._button.classList.remove('maplibregl-ctrl-globe-enabled');
       this._button.title = 'Switch to Globe View';
     }
