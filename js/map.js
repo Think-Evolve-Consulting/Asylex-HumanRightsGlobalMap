@@ -36,10 +36,12 @@ map = new maplibregl.Map({
   },
   center: [0, 20],
   zoom: 1.5,
-  projection: 'globe', // Start with globe projection
   maxZoom: 18,
   minZoom: 0.5
 });
+
+// Set globe projection after map initialization
+map.setProjection({ type: 'globe' });
 
 // Add navigation controls
 map.addControl(new maplibregl.NavigationControl(), 'top-right');
